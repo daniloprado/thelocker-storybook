@@ -4,13 +4,17 @@ import type { IconStyle } from '../Icon/Icon';
 import './Sidenav.css';
 
 export type SidenavLayout = 'full' | 'mini';
-export type SidenavNavItemState = 'default' | 'hover' | 'active';
+export type SidenavNavItemState = 'default' | 'hover' | 'active' | 'active2';
 
 export interface SidenavProps extends HTMLAttributes<HTMLElement> {
   layout?: SidenavLayout;
 }
 
 export interface SidenavMainProps extends HTMLAttributes<HTMLElement> {
+  title?: string;
+}
+
+export interface SidenavGroupProps extends HTMLAttributes<HTMLElement> {
   title?: string;
 }
 
@@ -117,12 +121,33 @@ function SidenavNavItem({
   );
 }
 
+function SidenavGroup({
+  title,
+  className,
+  children,
+  ...rest
+}: SidenavGroupProps) {
+  return (
+    <section
+      {...rest}
+      className={cx('sidenav-group', className)}
+    >
+      <div className="sidenav-group__items">
+        {title && <p className="sidenav-group__title">{title}</p>}
+        {children}
+      </div>
+    </section>
+  );
+}
+
 type SidenavComponent = typeof SidenavRoot & {
   Main: typeof SidenavMain;
+  Group: typeof SidenavGroup;
   NavItem: typeof SidenavNavItem;
 };
 
 export const Sidenav = Object.assign(SidenavRoot, {
   Main: SidenavMain,
+  Group: SidenavGroup,
   NavItem: SidenavNavItem
 }) as SidenavComponent;

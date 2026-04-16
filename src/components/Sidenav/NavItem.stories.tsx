@@ -18,7 +18,7 @@ const meta: Meta<typeof Sidenav.NavItem> = {
   argTypes: {
     state: {
       control: 'select',
-      options: ['default', 'hover', 'active']
+      options: ['default', 'hover', 'active', 'active2']
     },
     faStyle: {
       control: 'select',
@@ -69,6 +69,7 @@ export const States: Story = {
       <Sidenav.NavItem label="Clients" state="default" faCode="users" />
       <Sidenav.NavItem label="Clients" state="hover" faCode="users" />
       <Sidenav.NavItem label="Clients" state="active" faCode="users" />
+      <Sidenav.NavItem label="Clients" state="active2" faCode="users" />
     </div>
   )
 };

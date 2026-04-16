@@ -48,6 +48,11 @@ const preview: Preview = {
     layout: 'centered',
     docs: {
       toc: true
+    },
+    options: {
+      storySort: {
+        order: ['Welcome', 'Foundations', 'Tokens', 'Components', 'Templates', 'Experiment']
+      }
     }
   }
 };
