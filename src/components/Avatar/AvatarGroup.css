@@ -1,0 +1,43 @@
+.avatar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.avatar-group__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.avatar-group__title {
+  font-family: 'Mulish', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-body, 16px);
+  font-weight: 400;
+  line-height: var(--font-line-height-24, 24px);
+  color: var(--color-text-strong, #241f20);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.avatar-group__subtitle {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.avatar-group__subtitle-text {
+  font-family: 'Mulish', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-smaill, 14px);
+  font-weight: 400;
+  line-height: var(--font-line-height-20, 20px);
+  color: var(--color-text-weak, #6d6a6a);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1 0 0;
+}

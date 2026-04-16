@@ -1,0 +1,99 @@
+.chip {
+  --chip-bg: #daf4e7;
+  --chip-border: #45c987;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--chip-border);
+  border-radius: 200px;
+  background: var(--chip-bg);
+  color: #1f1f1f;
+  font-family: Mulish, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.chip--small {
+  padding: 2px 6px;
+  gap: 4px;
+  font-size: 10px;
+}
+
+.chip--medium {
+  padding: 4px 8px;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.chip--large {
+  padding: 8px 12px;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.chip__label {
+  display: inline-block;
+  line-height: 1.1;
+}
+
+.chip__icon {
+  flex: 0 0 auto;
+}
+
+.chip--small .chip__icon {
+  width: 10px;
+  height: 10px;
+}
+
+.chip--medium .chip__icon,
+.chip--large .chip__icon {
+  width: 12px;
+  height: 12px;
+}
+
+.chip--green {
+  --chip-bg: var(--color-green-100, #daf4e7);
+  --chip-border: var(--color-green-500, #45c987);
+}
+
+.chip--red {
+  --chip-bg: var(--color-red-100, #ffdee2);
+  --chip-border: var(--color-red-500, #ff5c6e);
+}
+
+.chip--orange {
+  --chip-bg: var(--color-orange-100, #ffeddc);
+  --chip-border: var(--color-orange-500, #ffa450);
+}
+
+.chip--teal {
+  --chip-bg: var(--color-accent-lighter-turquoise, #c0f1f4);
+  --chip-border: var(--color-accent-primary-turquoise, #42d5dd);
+}
+
+.chip--yellow {
+  --chip-bg: var(--color-yellow-100, #fff4cf);
+  --chip-border: var(--color-yellow-400, #ffdc60);
+}
+
+.chip--blue {
+  --chip-bg: var(--color-blue-100, #d9eafd);
+  --chip-border: var(--color-blue-400, #80b8fa);
+}
+
+.chip--pink {
+  --chip-bg: var(--color-accent-lighter-violet, #f2d5fd);
+  --chip-border: var(--color-accent-primary-violet, #d980fa);
+}
+
+.chip--neutral {
+  --chip-bg: var(--color-grey-200, #f3f3f3);
+  --chip-border: var(--color-grey-500, #dbdbdb);
+}
+
+.chip--white {
+  --chip-bg: var(--color-white-primary-500, #ffffff);
+  --chip-border: var(--color-grey-500, #dbdbdb);
+}

@@ -1,0 +1,27 @@
+---
+description: Limit browser screenshots to only when truly necessary
+alwaysApply: true
+---
+
+# Browser Screenshot Policy
+
+Do NOT take browser screenshots after every code change. Screenshots are expensive and slow.
+
+## When to screenshot
+
+- Debugging a **visual bug** the user reported (with a screenshot or description)
+- The user explicitly asks you to verify something visually
+- Final verification after a **large batch of changes** (not after each individual edit)
+
+## When NOT to screenshot
+
+- After routine CSS/component edits — trust the compiler and linter
+- After each file save — batch changes first, verify once at the end if needed
+- To confirm HMR picked up a change — it almost always does
+- After navigation — the browser snapshot from `browser_navigate` already confirms the page loaded
+
+## Preferred workflow
+
+1. Make all code changes
+2. Run `tsc --noEmit` and `ReadLints` to verify correctness
+3. Only screenshot if there's a specific visual concern

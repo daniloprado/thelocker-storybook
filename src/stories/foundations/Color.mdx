@@ -1,0 +1,184 @@
+import { Meta } from '@storybook/blocks';
+import {
+  tokenCollections,
+  tokenMeta,
+  tokenNameToCssVar
+} from '../../tokens/generated/tokens';
+
+<Meta title="Foundations/Color" />
+
+# Color
+
+Color variables from Figma, grouped by collection, tier, and mode.
+
+{(() => {
+  const cssVarByToken = new Map(
+    tokenNameToCssVar
+      .filter((entry) => entry.type === 'color')
+      .map((entry) => [`${entry.collection}::${entry.figmaName}`, entry.cssVar])
+  );
+
+  const colorCollections = tokenCollections
+    .map((collection) => ({
+      ...collection,
+      colorVariables: collection.variables.filter((token) => token.type === 'color')
+    }))
+    .filter((collection) => collection.colorVariables.length > 0);
+
+  if (colorCollections.length === 0) {
+    return <p>No color tokens available in exported collections.</p>;
+  }
+
+  const renderModeValue = (token, modeId) => {
+    const value = token.values[modeId];
+
+    if (typeof value !== 'string') {
+      return <code>{String(value ?? 'N/A')}</code>;
+    }
+
+    const canPaint =
+      value.startsWith('#') ||
+      value.startsWith('rgb(') ||
+      value.startsWith('rgba(') ||
+      value.startsWith('hsl(') ||
+      value.startsWith('hsla(');
+
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        {canPaint ? (
+          <span
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: 999,
+              border: '1px solid #d6d6d6',
+              background: value,
+              flexShrink: 0
+            }}
+          />
+        ) : null}
+        <code>{value}</code>
+      </div>
+    );
+  };
+
+  const totalColorTokens = colorCollections.reduce(
+    (count, collection) => count + collection.colorVariables.length,
+    0
+  );
+
+  return (
+    <>
+      <p style={{ marginBottom: 16 }}>
+        Source file: <code>{tokenMeta.sourceFile}</code>
+      </p>
+      <p style={{ marginTop: 0, marginBottom: 16 }}>
+        Collections: <strong>{colorCollections.length}</strong> | Color tokens:{' '}
+        <strong>{totalColorTokens}</strong>
+      </p>
+
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 24 }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #e5e5e5', padding: '8px 6px' }}>Collection</th>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #e5e5e5', padding: '8px 6px' }}>Modes</th>
+            <th style={{ textAlign: 'right', borderBottom: '1px solid #e5e5e5', padding: '8px 6px' }}>Color tokens</th>
+          </tr>
+        </thead>
+        <tbody>
+          {colorCollections.map((collection) => (
+            <tr key={`summary-${collection.id}`}>
+              <td style={{ borderBottom: '1px solid #f0f0f0', padding: '8px 6px' }}>
+                <strong>{collection.name}</strong> <code>({collection.id})</code>
+              </td>
+              <td style={{ borderBottom: '1px solid #f0f0f0', padding: '8px 6px' }}>
+                {collection.modes.map((mode) => mode.name).join(', ')}
+              </td>
+              <td style={{ borderBottom: '1px solid #f0f0f0', padding: '8px 6px', textAlign: 'right' }}>
+                {collection.colorVariables.length}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {colorCollections.map((collection) => {
+        const groups = {
+          Primitive: collection.colorVariables.filter((token) => token.tier === 'primitive'),
+          Semantic: collection.colorVariables.filter((token) => token.tier === 'semantic')
+        };
+
+        return (
+          <section key={collection.id} style={{ marginBottom: 36 }}>
+            <h2 style={{ marginBottom: 8 }}>
+              {collection.name} ({collection.id})
+            </h2>
+            <p style={{ marginTop: 0, marginBottom: 16, color: '#666' }}>
+              Modes: {collection.modes.map((mode) => mode.name).join(', ')}
+            </p>
+
+            {Object.entries(groups).map(([groupName, groupTokens]) => (
+              <section key={`${collection.id}-${groupName}`} style={{ marginBottom: 24 }}>
+                <h3>{groupName}</h3>
+                {groupTokens.length === 0 ? (
+                  <p style={{ color: '#777' }}>No {groupName.toLowerCase()} color tokens.</p>
+                ) : (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(220px, 1fr))', gap: 12 }}>
+                    {groupTokens.map((token) => {
+                      const cssVar =
+                        cssVarByToken.get(`${collection.id}::${token.name}`) ??
+                        `--color-${token.name
+                          .toLowerCase()
+                          .replace(/\//g, '-')
+                          .replace(/\s*[-_]\s*/g, '-')
+                          .replace(/[^a-z0-9-]/g, '-')
+                          .replace(/-+/g, '-')}`;
+                      const firstMode = collection.modes[0];
+                      const fallbackValue = firstMode ? token.values[firstMode.id] : '';
+                      const swatchBackground =
+                        typeof fallbackValue === 'string' ? fallbackValue : '#f3f3f3';
+
+                      return (
+                        <div
+                          key={`${collection.id}-${token.name}`}
+                          style={{
+                            border: '1px solid #ddd',
+                            borderRadius: 8,
+                            padding: 10,
+                            background: '#fff'
+                          }}
+                        >
+                          <div
+                            style={{
+                              height: 36,
+                              borderRadius: 6,
+                              background: `var(${cssVar}, ${swatchBackground})`,
+                              border: '1px solid #ddd'
+                            }}
+                          />
+                          <div style={{ fontSize: 12, marginTop: 8, fontWeight: 600 }}>{token.name}</div>
+                          <div style={{ fontSize: 11, color: '#666', marginTop: 4 }}>{cssVar}</div>
+                          <div style={{ marginTop: 8, display: 'grid', gap: 4 }}>
+                            {collection.modes.map((mode) => (
+                              <div
+                                key={`${token.name}-${mode.id}`}
+                                style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, gap: 8 }}
+                              >
+                                <span style={{ color: '#777' }}>{mode.name}</span>
+                                {renderModeValue(token, mode.id)}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </section>
+            ))}
+          </section>
+        );
+      })}
+    </>
+  );
+})()}

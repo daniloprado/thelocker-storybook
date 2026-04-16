@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Tokens/ThemeModes" />
+
+# Theme Modes
+
+Theme application is data-attribute based. Current setup uses one mode (`light`) and one collection (`core`).
+
+```css
+:root[data-theme="light"] {
+  /* token vars */
+}
+
+:root[data-theme="dark"][data-brand="brand-a"] {
+  /* token vars */
+}
+```
+
+```ts
+import { applyTheme } from '../../tokens/themes/applyTheme';
+
+applyTheme({ theme: 'light', brand: 'core' });
+```

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Token Export Schema",
+  "type": "object",
+  "required": [
+    "meta",
+    "collections"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "fileKey",
+        "sourceFile",
+        "extractedAt",
+        "sourceNodes",
+        "limitations"
+      ]
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "modes",
+          "variables"
+        ]
+      }
+    }
+  }
+}

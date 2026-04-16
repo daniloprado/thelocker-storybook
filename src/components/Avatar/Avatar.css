@@ -1,0 +1,116 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-family: 'Mulish', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ---------- sizes ---------- */
+
+.avatar--xsmall {
+  width: 20px;
+  height: 20px;
+}
+
+.avatar--small {
+  width: var(--space-height-small, 24px);
+  height: var(--space-height-small, 24px);
+}
+
+.avatar--medium {
+  width: var(--space-height-medium, 32px);
+  height: var(--space-height-medium, 32px);
+}
+
+.avatar--large {
+  width: var(--space-height-large, 40px);
+  height: var(--space-height-large, 40px);
+}
+
+.avatar--xlarge {
+  width: 48px;
+  height: 48px;
+}
+
+/* ---------- shapes ---------- */
+
+.avatar--circle {
+  border-radius: var(--radius-full, 200px);
+}
+
+.avatar--square {
+  border-radius: 0;
+}
+
+.avatar--rounded {
+  border-radius: var(--radius-small, 4px);
+}
+
+/* ---------- type: image ---------- */
+
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- type: placeholder ---------- */
+
+.avatar--placeholder {
+  background: var(--color-grey-lighter-200, #f3f3f3);
+  color: var(--color-icon-weak, #b6b4b5);
+}
+
+.avatar__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- type: initials ---------- */
+
+.avatar--initials {
+  background: var(--color-accent-lighter-turquoise, #c0f1f4);
+  color: var(--color-neutral-primary-500, #241f20);
+  font-weight: 400;
+}
+
+.avatar__initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.avatar--xsmall .avatar__initials {
+  font-size: 8px;
+}
+
+.avatar--small .avatar__initials {
+  font-size: var(--font-size-tiny, 12px);
+  line-height: 1;
+}
+
+.avatar--medium .avatar__initials {
+  font-size: var(--font-size-smaill, 14px);
+  line-height: var(--font-line-height-20, 20px);
+}
+
+.avatar--large .avatar__initials {
+  font-size: var(--font-size-body, 16px);
+  line-height: var(--font-line-height-24, 24px);
+}
+
+.avatar--xlarge .avatar__initials {
+  font-size: 18px;
+  line-height: var(--font-line-height-24, 24px);
+}

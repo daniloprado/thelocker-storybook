@@ -1,0 +1,68 @@
+import { Meta } from '@storybook/blocks';
+import { useMemo, useState } from 'react';
+import { tokenCollections, tokenNameToCssVar } from '../../tokens/generated/tokens';
+
+export function TokenTableSearch() {
+  const [query, setQuery] = useState('');
+
+  const rows = useMemo(() => {
+    const all = tokenCollections.flatMap((collection) =>
+      collection.variables.map((variable) => {
+        const mapEntry = tokenNameToCssVar.find((item) => item.figmaName === variable.name);
+        return {
+          name: variable.name,
+          type: variable.type,
+          tier: variable.tier,
+          modeValues: variable.values,
+          cssVar: mapEntry?.cssVar ?? 'N/A'
+        };
+      })
+    );
+
+    const q = query.trim().toLowerCase();
+    if (!q) return all;
+    return all.filter((row) => row.name.toLowerCase().includes(q) || row.cssVar.toLowerCase().includes(q) || row.type.toLowerCase().includes(q));
+  }, [query]);
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+        placeholder="Filter tokens"
+        style={{ marginBottom: 12, padding: '8px 10px', width: 280, borderRadius: 6, border: '1px solid #ccc' }}
+      />
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #ddd', padding: 8 }}>Name</th>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #ddd', padding: 8 }}>CSS Variable</th>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #ddd', padding: 8 }}>Type</th>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #ddd', padding: 8 }}>Tier</th>
+            <th style={{ textAlign: 'left', borderBottom: '1px solid #ddd', padding: 8 }}>Light Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.name}>
+              <td style={{ borderBottom: '1px solid #eee', padding: 8 }}>{row.name}</td>
+              <td style={{ borderBottom: '1px solid #eee', padding: 8 }}><code>{row.cssVar}</code></td>
+              <td style={{ borderBottom: '1px solid #eee', padding: 8 }}>{row.type}</td>
+              <td style={{ borderBottom: '1px solid #eee', padding: 8 }}>{row.tier}</td>
+              <td style={{ borderBottom: '1px solid #eee', padding: 8 }}><code>{JSON.stringify(row.modeValues.light)}</code></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+<Meta title="Tokens/TokenTable" />
+
+# Token Table
+
+Searchable token inventory.
+
+<TokenTableSearch />

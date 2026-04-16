@@ -1,0 +1,62 @@
+.drop-area {
+  width: 751px;
+  min-height: 94px;
+  border: 1px dashed var(--drop-area-border-color);
+  border-radius: var(--radius-small, 4px);
+  padding: var(--space-24, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--drop-area-text-color);
+  background: transparent;
+}
+
+.drop-area--default {
+  --drop-area-border-color: #b6b6b6;
+  --drop-area-text-color: var(--color-neutral-light-400, #6d6a6a);
+}
+
+.drop-area--active {
+  --drop-area-border-color: var(--color-blue-primary-500, #4094f7);
+  --drop-area-text-color: var(--color-blue-primary-500, #4094f7);
+}
+
+.drop-area__label-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 300px;
+}
+
+.drop-area__label,
+.drop-area__description {
+  margin: 0;
+  font-family: var(--font-family-body, 'Mulish', sans-serif);
+  text-align: center;
+}
+
+.drop-area__label {
+  font-size: var(--font-size-body, 16px);
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.drop-area__description {
+  font-size: var(--font-size-smaill, 14px);
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.drop-area__icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .drop-area {
+    width: min(751px, 95vw);
+  }
+}

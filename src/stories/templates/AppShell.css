@@ -1,0 +1,51 @@
+.app-shell {
+  display: flex;
+  height: 100vh;
+  background: var(--color-background-default, #ffffff);
+}
+
+.app-shell__sidebar {
+  flex-shrink: 0;
+}
+
+.app-shell__sidebar .sidenav {
+  min-height: 100vh;
+  height: 100%;
+}
+
+.app-shell__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---------- heading bar ---------- */
+
+.app-shell__heading {
+  display: flex;
+  align-items: center;
+  height: 62px;
+  padding: 17px 20px;
+  background: var(--color-background-default, #ffffff);
+  flex-shrink: 0;
+}
+
+.app-shell__heading-title {
+  margin: 0;
+  font-family: 'Mulish', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  color: #323946;
+  white-space: nowrap;
+}
+
+/* ---------- content ---------- */
+
+.app-shell__content {
+  flex: 1;
+  min-height: 0;
+  background: var(--color-background-default, #ffffff);
+}

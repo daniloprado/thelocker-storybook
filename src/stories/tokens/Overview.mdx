@@ -1,0 +1,16 @@
+import { Meta } from '@storybook/blocks';
+import { tokenCollections, tokenMeta } from '../../tokens/generated/tokens';
+
+<Meta title="Tokens/Overview" />
+
+# Tokens Overview
+
+Tokens are generated from `src/tokens/figma/raw-export.json` into CSS variables and typed TypeScript maps.
+
+<ul>
+  <li><strong>Collections:</strong> {tokenCollections.map((collection) => collection.name).join(', ')}</li>
+  <li><strong>Modes:</strong> {tokenCollections.flatMap((collection) => collection.modes.map((mode) => mode.name)).join(', ')}</li>
+  <li><strong>Source nodes:</strong> {tokenMeta.sourceNodes.join(', ')}</li>
+</ul>
+
+<p><strong>Primitive</strong> tokens store raw scales. <strong>Semantic</strong> tokens represent usage intent.</p>
