@@ -45,5 +45,8 @@ export type {
 export { TopBar } from './components/TopBar/TopBar';
 export type { TopBarProps } from './components/TopBar/TopBar';
 
+export { Dialog } from './components/Dialog/Dialog';
+export type { DialogProps, DialogVariant } from './components/Dialog/Dialog';
+
 export { applyTheme } from './tokens/themes/applyTheme';
 export type { ThemeOptions } from './tokens/themes/applyTheme';

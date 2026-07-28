@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Changelog" />
+
+# Changelog
+
+Summarised updates to The Locker 2.0 design system, newest first.
+
+---
+
+### July 23, 2026
+
+**New component: Dialog**
+
+- Created `Dialog` component with two variants: `scroll` (full-width, scrollable body) and `simple` (compact).
+- Props: `title`, `variant`, `open`, `showOverlay`, `onClose`, `footer`, `headingLeft`, `headingRight`, `width`.
+- Reuses existing `Button` and `Icon` components for footer actions and close button.
+- Added stories: Playground, Scroll, Simple, With Overlay, Heading Slots, Destructive Action.
+- Exported from `index.ts` and registered in `sourceDocs`.
+
+**Input component synced to Figma**
+
+- Created `Input/Stroke/Warning` variable in Figma (aliased to `Yellow/500`).
+- Fixed scopes on all 11 `Input/*` variables (from `ALL_SCOPES` to proper `TEXT_FILL`, `FRAME_FILL`, `STROKE_COLOR`).
+- Set WEB code syntax (`var(--color-input-*)`) on all Input variables for Dev Mode.
+- Built Input ComponentSet in Figma with 27 variants (3 Sizes × 3 Statuses × 3 States), fully bound to design tokens.

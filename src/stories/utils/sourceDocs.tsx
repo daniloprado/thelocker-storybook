@@ -106,6 +106,23 @@ const dataSource = [
   subtitle="Product Designer"
   src="/avatar.jpg"
 />`;
+    case 'Dialog':
+      return `import { Dialog } from 'thelocker-storybook';
+import { Button } from 'thelocker-storybook';
+
+<Dialog
+  title="Heading"
+  variant="scroll"
+  onClose={() => {}}
+  footer={
+    <>
+      <Button label="Cancel" variant="outline" size="large" />
+      <Button label="Confirm" variant="filled" size="large" />
+    </>
+  }
+>
+  <p>Dialog content goes here.</p>
+</Dialog>`;
     default:
       return `import { ${componentName} } from 'thelocker-storybook';
 
