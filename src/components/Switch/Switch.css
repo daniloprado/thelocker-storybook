@@ -1,0 +1,96 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.switch__track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 42px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-grey-primary-500, #dbdbdb);
+  border-radius: var(--radius-full, 200px);
+  background: var(--color-white-primary-500, #ffffff);
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.switch__thumb {
+  position: absolute;
+  left: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-grey-primary-500, #dbdbdb);
+  transition: left 120ms ease, background-color 120ms ease;
+}
+
+.switch__label {
+  font-family: var(--font-family-body, 'Mulish'), Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-smaill, 14px);
+  line-height: var(--line-height-20, 20px);
+  color: var(--color-neutral-primary-500, #241f20);
+}
+
+/* Selected */
+.switch--selected .switch__track {
+  background: var(--color-yellow-primary-500, #ffca10);
+  border-color: var(--color-yellow-primary-500, #ffca10);
+}
+
+.switch--selected .switch__thumb {
+  left: 19px;
+  background: var(--color-white-primary-500, #ffffff);
+}
+
+/* Focus */
+.switch__input:focus-visible ~ .switch__track {
+  box-shadow: 0 0 0 2px var(--color-blue-lighter-200, #bfdbfc);
+}
+
+/* Hover */
+.switch:not(.switch--disabled):hover .switch__track {
+  border-color: var(--color-blue-primary-500, #4094f7);
+}
+
+/* Disabled */
+.switch--disabled {
+  cursor: not-allowed;
+}
+
+.switch--disabled .switch__track {
+  border-color: var(--color-grey-light-400, #e7e7e7);
+  background: var(--color-grey-50, #fcfcfc);
+}
+
+.switch--disabled .switch__thumb {
+  background: var(--color-grey-light-400, #e7e7e7);
+}
+
+.switch--disabled.switch--selected .switch__track {
+  background: var(--color-grey-light-400, #e7e7e7);
+  border-color: var(--color-grey-light-400, #e7e7e7);
+}
+
+.switch--disabled.switch--selected .switch__thumb {
+  background: var(--color-white-primary-500, #ffffff);
+}
+
+.switch--disabled .switch__label {
+  color: var(--color-neutral-light-400, #6d6a6a);
+}

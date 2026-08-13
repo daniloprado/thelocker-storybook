@@ -795,7 +795,103 @@ export const tokenCollections: TokenCollection[] = [
         "type": "color",
         "tier": "semantic",
         "values": {
-          "light": "#45C987"
+          "light": "#D44D5C"
+        }
+      },
+      {
+        "name": "Icon/Primary",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#4094F7"
+        }
+      },
+      {
+        "name": "Text/Link",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#4094F7"
+        }
+      },
+      {
+        "name": "Decorative/Blue/Strong",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#4094F7"
+        }
+      },
+      {
+        "name": "Decorative/Blue/Weak",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#D9EAFD"
+        }
+      },
+      {
+        "name": "Decorative/Yellow/Strong",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#D4A80D"
+        }
+      },
+      {
+        "name": "Decorative/Yellow/Weak",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#FFF4CF"
+        }
+      },
+      {
+        "name": "Decorative/Green/Strong",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#3AA771"
+        }
+      },
+      {
+        "name": "Decorative/Green/Weak",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#DAF4E7"
+        }
+      },
+      {
+        "name": "Decorative/Orange/Strong",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#D48943"
+        }
+      },
+      {
+        "name": "Decorative/Orange/Weak",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#FFEDDC"
+        }
+      },
+      {
+        "name": "Decorative/Pink/Strong",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#D48943"
+        }
+      },
+      {
+        "name": "Decorative/Pink/Weak",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#FFEDDC"
         }
       },
       {
@@ -876,6 +972,14 @@ export const tokenCollections: TokenCollection[] = [
         "tier": "semantic",
         "values": {
           "light": "#D44D5C"
+        }
+      },
+      {
+        "name": "Input/Stroke/Warning",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#FFCA10"
         }
       },
       {
@@ -2000,6 +2104,97 @@ export const tokenNameToCssVar = [
   {
     "figmaName": "Input/Stroke/Error",
     "cssVar": "--color-input-stroke-error",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Input/Stroke/Warning",
+    "cssVar": "--color-input-stroke-warning",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Icon/Primary",
+    "cssVar": "--color-icon-primary",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Text/Link",
+    "cssVar": "--color-text-link",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Blue/Strong",
+    "cssVar": "--color-decorative-blue-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Blue/Weak",
+    "cssVar": "--color-decorative-blue-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Yellow/Strong",
+    "cssVar": "--color-decorative-yellow-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Yellow/Weak",
+    "cssVar": "--color-decorative-yellow-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Green/Strong",
+    "cssVar": "--color-decorative-green-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Green/Weak",
+    "cssVar": "--color-decorative-green-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Orange/Strong",
+    "cssVar": "--color-decorative-orange-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Orange/Weak",
+    "cssVar": "--color-decorative-orange-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Pink/Strong",
+    "cssVar": "--color-decorative-pink-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "core"
+  },
+  {
+    "figmaName": "Decorative/Pink/Weak",
+    "cssVar": "--color-decorative-pink-weak",
     "type": "color",
     "tier": "semantic",
     "collection": "core"

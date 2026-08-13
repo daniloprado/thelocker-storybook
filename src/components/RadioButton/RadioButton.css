@@ -1,0 +1,83 @@
+.radio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-button__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.radio-button__visual {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-grey-primary-500, #dbdbdb);
+  border-radius: 50%;
+  background: var(--color-white-primary-500, #ffffff);
+  transition: border-color 120ms ease;
+}
+
+.radio-button__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 120ms ease;
+}
+
+.radio-button__label {
+  font-family: var(--font-family-body, 'Mulish'), Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-smaill, 14px);
+  line-height: var(--line-height-20, 20px);
+  color: var(--color-neutral-primary-500, #241f20);
+}
+
+/* Selected */
+.radio-button--selected .radio-button__dot {
+  background: var(--color-yellow-primary-500, #ffca10);
+}
+
+/* Focus */
+.radio-button__input:focus-visible ~ .radio-button__visual {
+  box-shadow: 0 0 0 2px var(--color-blue-lighter-200, #bfdbfc);
+}
+
+/* Hover */
+.radio-button:not(.radio-button--disabled):hover .radio-button__visual {
+  border-color: var(--color-blue-primary-500, #4094f7);
+}
+
+/* Disabled */
+.radio-button--disabled {
+  cursor: not-allowed;
+}
+
+.radio-button--disabled .radio-button__visual {
+  border-color: var(--color-grey-light-400, #e7e7e7);
+  background: var(--color-grey-50, #fcfcfc);
+}
+
+.radio-button--disabled .radio-button__dot {
+  background: transparent;
+}
+
+.radio-button--disabled.radio-button--selected .radio-button__dot {
+  background: var(--color-grey-light-400, #e7e7e7);
+}
+
+.radio-button--disabled .radio-button__label {
+  color: var(--color-neutral-light-400, #6d6a6a);
+}

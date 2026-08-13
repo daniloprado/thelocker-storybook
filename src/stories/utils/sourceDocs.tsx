@@ -123,6 +123,58 @@ import { Button } from 'thelocker-storybook';
 >
   <p>Dialog content goes here.</p>
 </Dialog>`;
+    case 'Card':
+      return `import { Card } from 'thelocker-storybook';
+
+<Card
+  title="Getting Started"
+  description="Free live masterclass covering setup."
+  tag="Master class"
+  size="medium"
+/>`;
+    case 'Tabs':
+      return `import { Tabs } from 'thelocker-storybook';
+
+<Tabs size="default" orientation="horizontal">
+  <Tabs.Item label="Tab 1" active />
+  <Tabs.Item label="Tab 2" />
+  <Tabs.Item label="Tab 3" />
+</Tabs>`;
+    case 'Checkbox':
+      return `import { Checkbox } from 'thelocker-storybook';
+
+<Checkbox label="Accept terms" />`;
+    case 'RadioButton':
+      return `import { RadioButton } from 'thelocker-storybook';
+
+<RadioButton label="Option A" name="group" />`;
+    case 'Switch':
+      return `import { Switch } from 'thelocker-storybook';
+
+<Switch label="Enable notifications" />`;
+    case 'List':
+      return `import { List } from 'thelocker-storybook';
+
+<List>
+  <List.Item label="Item 1" secondaryText="Right" />
+  <List.Item label="Item 2" secondaryText="Right" />
+</List>`;
+    case 'Tooltip':
+      return `import { Tooltip } from 'thelocker-storybook';
+
+<Tooltip text="Tooltip content" position="top">
+  <button>Hover me</button>
+</Tooltip>`;
+    case 'Widget':
+      return `import { Widget } from 'thelocker-storybook';
+
+<Widget title="Revenue">
+  <p>$1,000.00</p>
+</Widget>`;
+    case 'FilterChip':
+      return `import { FilterChip } from 'thelocker-storybook';
+
+<FilterChip label="Breakfast" selected />`;
     default:
       return `import { ${componentName} } from 'thelocker-storybook';
 

@@ -1,0 +1,54 @@
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  font-family: Mulish, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.tooltip__trigger {
+  display: inline-flex;
+}
+
+.tooltip__content {
+  position: absolute;
+  z-index: 1000;
+  padding: 4px 8px;
+  background: var(--color-neutral-primary-500, #241f20);
+  color: var(--color-white-primary-500, #fff);
+  border-radius: var(--radius-small, 4px);
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tooltip:hover .tooltip__content {
+  opacity: 1;
+}
+
+/* Positions */
+
+.tooltip--top .tooltip__content {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip--bottom .tooltip__content {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip--left .tooltip__content {
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip--right .tooltip__content {
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
