@@ -1,0 +1,12 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": ["src/figma/**/*.figma.ts"],
+    "importPaths": {
+      "src/components/**": "thelocker-storybook"
+    },
+    "paths": {
+      "thelocker-storybook": "src/components"
+    }
+  }
+}
