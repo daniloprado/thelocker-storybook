@@ -36,7 +36,7 @@ export function Card({
           <>
             {tag ? (
               <div className="card__tag">
-                <Chip label={tag} size="small" color="blue" showLeadingIcon={false} showTrailingIcon={false} />
+                <Chip label={tag} size="small" color="blue" />
               </div>
             ) : null}
             <h3 className="card__title">{title}</h3>

@@ -52,6 +52,7 @@ export { Card } from './components/Card/Card';
 export type { CardProps, CardSize } from './components/Card/Card';
 
 export { Tabs } from './components/Tabs/Tabs';
+export type { TabsProps, TabItemProps, TabsSize, TabsOrientation, TabsStyle } from './components/Tabs/Tabs';
 
 export { Checkbox } from './components/Checkbox/Checkbox';
 export type { CheckboxProps } from './components/Checkbox/Checkbox';

@@ -1,36 +1,41 @@
 .chip {
-  --chip-bg: #daf4e7;
-  --chip-border: #45c987;
+  --chip-bg: var(--color-green-100, #daf4e7);
+  --chip-border: var(--color-green-500, #45c987);
+  --chip-fg: #000000;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--space-2, 8px);
   border: 1px solid var(--chip-border);
-  border-radius: 200px;
+  border-radius: var(--radius-full, 200px);
   background: var(--chip-bg);
-  color: #1f1f1f;
-  font-family: Mulish, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--chip-fg);
+  font-family: var(--font-family-body, Mulish), Inter, system-ui, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1;
+  box-sizing: border-box;
 }
 
 .chip--small {
   padding: 2px 6px;
   gap: 4px;
   font-size: 10px;
+  min-height: 17px;
 }
 
 .chip--medium {
   padding: 4px 8px;
   gap: 6px;
-  font-size: 14px;
+  font-size: var(--font-size-smaill, 14px);
+  min-height: 26px;
 }
 
 .chip--large {
   padding: 8px 12px;
   gap: 6px;
-  font-size: 16px;
+  font-size: var(--font-size-body, 16px);
+  min-height: 36px;
 }
 
 .chip__label {
@@ -38,19 +43,11 @@
   line-height: 1.1;
 }
 
-.chip__icon {
+.chip__slot {
+  display: inline-flex;
   flex: 0 0 auto;
-}
-
-.chip--small .chip__icon {
-  width: 10px;
-  height: 10px;
-}
-
-.chip--medium .chip__icon,
-.chip--large .chip__icon {
-  width: 12px;
-  height: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .chip--green {
@@ -96,4 +93,9 @@
 .chip--white {
   --chip-bg: var(--color-white-primary-500, #ffffff);
   --chip-border: var(--color-grey-500, #dbdbdb);
+}
+
+.chip--white-strong {
+  --chip-bg: var(--color-white-primary-500, #ffffff);
+  --chip-border: var(--color-neutral-500, #241f20);
 }

@@ -1,7 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './Tabs';
+import { Icon } from '../Icon/Icon';
 import tabsSource from './Tabs.tsx?raw';
 import { sourceDocs } from '../../stories/utils/sourceDocs';
+
+const calendarTrailing = (
+  <span className="tabs__icon-btn" aria-hidden>
+    <Icon fa-code="calendar" fa-style="regular" size="xsmall" />
+  </span>
+);
 
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs',
@@ -17,7 +24,7 @@ type Story = StoryObj<typeof Tabs>;
 export const Playground: Story = {
   render: () => (
     <Tabs>
-      <Tabs.Item label="Tab one" active />
+      <Tabs.Item label="Tab one" active trailing={calendarTrailing} />
       <Tabs.Item label="Tab two" />
       <Tabs.Item label="Tab three" />
     </Tabs>
@@ -30,7 +37,7 @@ export const Sizes: Story = {
       <div>
         <p style={{ margin: '0 0 8px', fontSize: 12, color: '#6d6a6a' }}>Default</p>
         <Tabs size="default">
-          <Tabs.Item label="Tab one" active />
+          <Tabs.Item label="Tab one" active trailing={calendarTrailing} />
           <Tabs.Item label="Tab two" />
           <Tabs.Item label="Tab three" />
         </Tabs>
@@ -54,5 +61,30 @@ export const Vertical: Story = {
       <Tabs.Item label="Tab two" />
       <Tabs.Item label="Tab three" />
     </Tabs>
+  )
+};
+
+export const PillStyle: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+      <div>
+        <p style={{ margin: '0 0 8px', fontSize: 12, color: '#6d6a6a' }}>Pill — Default size (Chip Medium)</p>
+        <Tabs tabStyle="pill">
+          <Tabs.Item label="All" active />
+          <Tabs.Item label="Active" />
+          <Tabs.Item label="Paused" />
+          <Tabs.Item label="Inactive" />
+        </Tabs>
+      </div>
+      <div>
+        <p style={{ margin: '0 0 8px', fontSize: 12, color: '#6d6a6a' }}>Pill — Small size (Chip Small)</p>
+        <Tabs tabStyle="pill" size="small">
+          <Tabs.Item label="All" active />
+          <Tabs.Item label="Active" />
+          <Tabs.Item label="Paused" />
+          <Tabs.Item label="Inactive" />
+        </Tabs>
+      </div>
+    </div>
   )
 };

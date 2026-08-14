@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Chip } from './Chip';
+import { Icon } from '../Icon/Icon';
 import chipSource from './Chip.tsx?raw';
 import { sourceDocs } from '../../stories/utils/sourceDocs';
 
@@ -10,8 +11,14 @@ const meta: Meta<typeof Chip> = {
     label: 'Chip',
     color: 'green',
     size: 'small',
-    showLeadingIcon: true,
-    showTrailingIcon: true
+    showLeadingIcon: false,
+    showTrailingIcon: false
+  },
+  argTypes: {
+    color: {
+      control: 'select',
+      options: ['green', 'red', 'orange', 'teal', 'yellow', 'blue', 'pink', 'neutral', 'white', 'whiteStrong']
+    }
   },
   parameters: sourceDocs('src/components/Chip/Chip.tsx', chipSource),
   tags: ['autodocs']
@@ -25,7 +32,18 @@ export const Playground: Story = {};
 
 export const Matrix: Story = {
   render: () => {
-    const colors = ['green', 'red', 'orange', 'teal', 'yellow', 'blue', 'pink', 'neutral', 'white'] as const;
+    const colors = [
+      'green',
+      'red',
+      'orange',
+      'teal',
+      'yellow',
+      'blue',
+      'pink',
+      'neutral',
+      'white',
+      'whiteStrong'
+    ] as const;
     const sizes = ['small', 'medium', 'large'] as const;
 
     return (
@@ -38,9 +56,18 @@ export const Matrix: Story = {
   }
 };
 
-export const NoIcons: Story = {
-  args: {
-    showLeadingIcon: false,
-    showTrailingIcon: false
-  }
+export const WithSlots: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Chip label="Chip" color="green" size="medium" showLeadingIcon showTrailingIcon />
+      <Chip
+        label="Filter"
+        color="neutral"
+        size="medium"
+        leading={<Icon fa-code="sliders" fa-style="regular" size="xsmall" />}
+        trailing={<Icon fa-code="xmark" fa-style="regular" size="xsmall" />}
+      />
+      <Chip label="White Strong" color="whiteStrong" size="medium" />
+    </div>
+  )
 };

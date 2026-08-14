@@ -38,7 +38,8 @@ function defaultSnippet(relativePath: string): string {
     case 'Chip':
       return `import { Chip } from 'thelocker-storybook';
 
-<Chip label="Client" color="green" size="small" />`;
+<Chip label="Client" color="green" size="small" />
+<Chip label="Selected" color="whiteStrong" size="medium" />`;
     case 'DropArea':
       return `import { DropArea } from 'thelocker-storybook';
 
@@ -135,10 +136,18 @@ import { Button } from 'thelocker-storybook';
     case 'Tabs':
       return `import { Tabs } from 'thelocker-storybook';
 
+{/* Standard style */}
 <Tabs size="default" orientation="horizontal">
   <Tabs.Item label="Tab 1" active />
   <Tabs.Item label="Tab 2" />
   <Tabs.Item label="Tab 3" />
+</Tabs>
+
+{/* Pill style — active uses Chip whiteStrong, inactive uses Chip neutral */}
+<Tabs tabStyle="pill">
+  <Tabs.Item label="All" active />
+  <Tabs.Item label="Active" />
+  <Tabs.Item label="Paused" />
 </Tabs>`;
     case 'Checkbox':
       return `import { Checkbox } from 'thelocker-storybook';

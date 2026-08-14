@@ -15,16 +15,18 @@ const color = instance.getEnum('Color', {
   'Pink': 'pink',
   'Teal': 'teal',
   'Orange': 'orange',
-  'White Strong': 'white',
+  'White Strong': 'whiteStrong',
 })
 const size = instance.getEnum('Size', {
   'Small': 'small',
   'Medium': 'medium',
   'Large': 'large',
 })
+const showHeadingSlot = instance.getBoolean('Show heading slot')
+const showTrailingSlot = instance.getBoolean('Show trailing slot')
 
 export default {
-  example: figma.code`<Chip label="${label}" color="${color}" size="${size}" />`,
+  example: figma.code`<Chip label="${label}" color="${color}" size="${size}"${showHeadingSlot ? ' showLeadingIcon' : ''}${showTrailingSlot ? ' showTrailingIcon' : ''} />`,
   imports: ['import { Chip } from "thelocker-storybook"'],
   id: 'chip',
   metadata: { nestable: true },

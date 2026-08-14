@@ -1,37 +1,34 @@
-import type { SVGProps } from 'react';
+import type { ReactNode } from 'react';
+import { Icon } from '../Icon/Icon';
 import './Chip.css';
 
-export type ChipColor = 'green' | 'red' | 'orange' | 'teal' | 'yellow' | 'blue' | 'pink' | 'neutral' | 'white';
+export type ChipColor =
+  | 'green'
+  | 'red'
+  | 'orange'
+  | 'teal'
+  | 'yellow'
+  | 'blue'
+  | 'pink'
+  | 'neutral'
+  | 'white'
+  | 'whiteStrong';
+
 export type ChipSize = 'small' | 'medium' | 'large';
 
 export interface ChipProps {
   label?: string;
   color?: ChipColor;
   size?: ChipSize;
+  /** Figma: Show heading slot. When true and `leading` is omitted, a default icon is shown. */
   showLeadingIcon?: boolean;
+  /** Figma: Show trailing slot. When true and `trailing` is omitted, a default icon is shown. */
   showTrailingIcon?: boolean;
-}
-
-function StarIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" {...props}>
-      <path
-        d="M8 2.3l1.7 3.45 3.8.55-2.75 2.67.65 3.78L8 10.95l-3.4 1.8.65-3.78L2.5 6.3l3.8-.55L8 2.3z"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function CloseIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" {...props}>
-      <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
+  /** Leading slot content (Figma Leading Slot). */
+  leading?: ReactNode;
+  /** Trailing slot content (Figma Trailing Slot). */
+  trailing?: ReactNode;
+  className?: string;
 }
 
 const COLOR_CLASS: Record<ChipColor, string> = {
@@ -43,21 +40,40 @@ const COLOR_CLASS: Record<ChipColor, string> = {
   blue: 'chip--blue',
   pink: 'chip--pink',
   neutral: 'chip--neutral',
-  white: 'chip--white'
+  white: 'chip--white',
+  whiteStrong: 'chip--white-strong'
+};
+
+const ICON_SIZE: Record<ChipSize, 'xxsmall' | 'xsmall'> = {
+  small: 'xxsmall',
+  medium: 'xsmall',
+  large: 'xsmall'
 };
 
 export function Chip({
   label = 'Chip',
   color = 'green',
   size = 'small',
-  showLeadingIcon = true,
-  showTrailingIcon = true
+  showLeadingIcon = false,
+  showTrailingIcon = false,
+  leading,
+  trailing,
+  className
 }: ChipProps) {
+  const leadingNode =
+    leading ??
+    (showLeadingIcon ? <Icon fa-code="star" fa-style="regular" size={ICON_SIZE[size]} /> : null);
+  const trailingNode =
+    trailing ??
+    (showTrailingIcon ? <Icon fa-code="xmark" fa-style="regular" size={ICON_SIZE[size]} /> : null);
+
+  const classes = ['chip', `chip--${size}`, COLOR_CLASS[color], className].filter(Boolean).join(' ');
+
   return (
-    <span className={`chip chip--${size} ${COLOR_CLASS[color]}`}>
-      {showLeadingIcon ? <StarIcon className="chip__icon" /> : null}
+    <span className={classes}>
+      {leadingNode ? <span className="chip__slot chip__slot--leading">{leadingNode}</span> : null}
       <span className="chip__label">{label}</span>
-      {showTrailingIcon ? <CloseIcon className="chip__icon" /> : null}
+      {trailingNode ? <span className="chip__slot chip__slot--trailing">{trailingNode}</span> : null}
     </span>
   );
 }
