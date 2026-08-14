@@ -4,6 +4,70 @@ import { Meta } from '@storybook/blocks';
 
 # Motion
 
-No motion tokens were returned by Figma MCP for sampled nodes.
+Motion guidelines for transitions and animations across The Locker 2.0 interface.
 
-<div style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8 }}>Motion tokens: N/A</div>
+---
+
+## Principles
+
+1. **Purposeful** — Animation guides attention, never distracts
+2. **Fast** — Micro-interactions complete in under 200ms
+3. **Consistent** — The same easing and duration patterns are reused everywhere
+
+---
+
+## Recommended durations
+
+No explicit motion tokens exist in the Figma variables yet. The following conventions are used across components:
+
+<div style={{ display: 'grid', gap: 0, marginTop: 16 }}>
+  {[
+    { name: 'Instant', duration: '0ms', use: 'Color changes on active/pressed states', example: 'background-color' },
+    { name: 'Fast', duration: '120ms', use: 'Micro-feedback: checkbox ticks, switch thumb, focus rings', example: 'opacity, transform' },
+    { name: 'Normal', duration: '200ms', use: 'Tooltips, chips appearing/disappearing, hover effects', example: 'opacity, box-shadow' },
+    { name: 'Slow', duration: '300ms', use: 'Dialogs opening, sidebar expand/collapse', example: 'transform, height' },
+  ].map((item) => (
+    <div key={item.name} style={{ display: 'grid', gridTemplateColumns: '100px 80px 1fr 1fr', gap: 12, padding: '12px 0', borderBottom: '1px solid #f0f0f0', alignItems: 'center', fontSize: 13 }}>
+      <strong>{item.name}</strong>
+      <code>{item.duration}</code>
+      <span style={{ color: '#666' }}>{item.use}</span>
+      <code style={{ fontSize: 11, color: '#999' }}>{item.example}</code>
+    </div>
+  ))}
+</div>
+
+---
+
+## Easing
+
+| Curve | Value | Use |
+|-------|-------|-----|
+| Ease out | `cubic-bezier(0.25, 0, 0.25, 1)` | Elements entering the screen |
+| Ease in-out | `cubic-bezier(0.42, 0, 0.58, 1)` | Elements that move or resize |
+| Linear | `linear` | Progress indicators, loading bars |
+
+---
+
+## Examples in code
+
+```css
+.tooltip {
+  opacity: 0;
+  transition: opacity 200ms cubic-bezier(0.25, 0, 0.25, 1);
+}
+.tooltip--visible {
+  opacity: 1;
+}
+
+.sidebar {
+  width: 64px;
+  transition: width 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.sidebar--expanded {
+  width: 240px;
+}
+```
+
+---
+
+When dedicated motion tokens are added to Figma variables, they will be synced and displayed here automatically.

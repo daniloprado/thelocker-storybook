@@ -4,10 +4,58 @@ import { Meta } from '@storybook/blocks';
 
 # Elevation
 
-No explicit shadow variables were returned by Figma MCP for sampled nodes.
+Elevation separates surfaces from each other using subtle shadows, giving the interface a sense of depth and hierarchy.
 
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 180px)', gap: 16 }}>
-  <div style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, background: '#fff' }}>Shadow 1: N/A</div>
-  <div style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, background: '#fff' }}>Shadow 2: N/A</div>
-  <div style={{ padding: 16, border: '1px solid #ddd', borderRadius: 8, background: '#fff' }}>Shadow 3: N/A</div>
+---
+
+## Levels
+
+The Locker 2.0 currently relies on **border-based** elevation rather than shadow tokens. Components sit on distinct surface layers through background color and stroke differences.
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, margin: '24px 0' }}>
+  <div style={{ padding: 24, borderRadius: 12, background: '#fff', border: '1px solid #e5e5e5', textAlign: 'center' }}>
+    <div style={{ fontWeight: 600, marginBottom: 4 }}>Level 0 — Base</div>
+    <div style={{ fontSize: 12, color: '#666' }}>Page background</div>
+    <code style={{ fontSize: 11, display: 'block', marginTop: 8 }}>--color-background-default</code>
+  </div>
+  <div style={{ padding: 24, borderRadius: 12, background: '#F8F8F8', border: '1px solid #DBDBDB', textAlign: 'center' }}>
+    <div style={{ fontWeight: 600, marginBottom: 4 }}>Level 1 — Raised</div>
+    <div style={{ fontSize: 12, color: '#666' }}>Cards, widgets, sidebars</div>
+    <code style={{ fontSize: 11, display: 'block', marginTop: 8 }}>--color-background-emphasis</code>
+  </div>
+  <div style={{ padding: 24, borderRadius: 12, background: '#fff', border: '2px solid #4094F7', textAlign: 'center' }}>
+    <div style={{ fontWeight: 600, marginBottom: 4 }}>Level 2 — Overlay</div>
+    <div style={{ fontSize: 12, color: '#666' }}>Dialogs, tooltips, dropdowns</div>
+    <code style={{ fontSize: 11, display: 'block', marginTop: 8 }}>--color-stroke-primary-strong</code>
+  </div>
 </div>
+
+---
+
+## Approach
+
+Instead of explicit `box-shadow` tokens, surfaces are distinguished by:
+
+1. **Background color** — `--color-background-default` vs `--color-background-emphasis`
+2. **Border strokes** — `--color-stroke-neutral-strong` for subtle, `--color-stroke-primary-strong` for focused/active
+3. **Border radius** — Larger radius (`--radius-large`) for overlay surfaces
+
+If dedicated shadow tokens are added to the Figma variables in the future, they will be automatically synced here.
+
+---
+
+## Usage
+
+```css
+.card {
+  background: var(--color-background-default);
+  border: 1px solid var(--color-stroke-neutral-strong);
+  border-radius: var(--radius-medium);
+}
+
+.dialog-overlay {
+  background: var(--color-background-default);
+  border: 1px solid var(--color-stroke-neutral-weak);
+  border-radius: var(--radius-large);
+}
+```

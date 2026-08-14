@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Foundations/Radius" />
+
+# Radius
+
+Border radius tokens control the roundness of component corners. Use semantic names to keep shapes consistent across the system.
+
+---
+
+## Radius scale
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, margin: '24px 0' }}>
+  {[
+    { name: 'Small', var: '--radius-small', value: 4 },
+    { name: 'Medium', var: '--radius-medium', value: 8 },
+    { name: 'Large', var: '--radius-large', value: 16 },
+    { name: 'Full', var: '--radius-full', value: 200 },
+  ].map((item) => (
+    <div key={item.var} style={{ textAlign: 'center' }}>
+      <div style={{
+        width: 80,
+        height: 80,
+        background: 'var(--color-blue-100, #D9EAFD)',
+        border: '2px solid var(--color-blue-500, #4094F7)',
+        borderRadius: item.value,
+        margin: '0 auto 12px',
+      }} />
+      <div style={{ fontWeight: 600, fontSize: 14 }}>{item.name}</div>
+      <code style={{ fontSize: 11 }}>{item.var}</code>
+      <div style={{ fontSize: 12, color: '#666', marginTop: 4 }}>{item.value}px</div>
+    </div>
+  ))}
+</div>
+
+---
+
+## When to use
+
+| Token | Use case |
+|-------|----------|
+| `--radius-small` (4px) | Chips, small badges, inner elements |
+| `--radius-medium` (8px) | Cards, inputs, buttons, dropdowns |
+| `--radius-large` (16px) | Modals, large containers, dialogs |
+| `--radius-full` (200px) | Avatars, circular badges, pills |
+
+---
+
+## Usage
+
+```css
+.input {
+  border-radius: var(--radius-medium);
+}
+
+.avatar {
+  border-radius: var(--radius-full);
+}
+
+.card {
+  border-radius: var(--radius-large);
+}
+```

@@ -4,14 +4,90 @@ import { Meta } from '@storybook/blocks';
 
 # Typography
 
-Type tokens and scale preview.
+The Locker 2.0 uses **Mulish** as the single font family for both headings and body text. Type tokens define size, weight, and line height at each level of the hierarchy.
 
-<div style={{ display: 'grid', gap: 16 }}>
-  <div>
-    <div style={{ fontFamily: 'var(--font-heading-h2-web-family)', fontWeight: 'var(--font-heading-h2-web-weight)', fontSize: 'var(--font-heading-h2-web-size)', lineHeight: 'var(--font-heading-h2-web-line-height)', letterSpacing: 'var(--font-heading-h2-web-letter-spacing)' }}>
-      Heading H2 - Web sample
+---
+
+## Font families
+
+| Role | Family | CSS variable |
+|------|--------|-------------|
+| Heading | Mulish | `--font-family-heading` |
+| Body | Mulish | `--font-family-body` |
+
+---
+
+## Type scale
+
+<div style={{ display: 'grid', gap: 0 }}>
+  {[
+    { name: 'Display', size: 48, lineHeight: 56, weight: 700, var: '--font-size-display' },
+    { name: 'Heading 1', size: 40, lineHeight: 48, weight: 700, var: '--font-size-heading-1' },
+    { name: 'Heading 2', size: 32, lineHeight: 40, weight: 700, var: '--font-size-heading-2' },
+    { name: 'Heading 3', size: 24, lineHeight: 32, weight: 700, var: '--font-size-heading-3' },
+    { name: 'Heading 4', size: 20, lineHeight: 28, weight: 700, var: '--font-size-heading-4' },
+    { name: 'Body', size: 16, lineHeight: 24, weight: 400, var: '--font-size-body' },
+    { name: 'Small', size: 14, lineHeight: 20, weight: 400, var: '--font-size-smaill' },
+    { name: 'Tiny', size: 12, lineHeight: 16, weight: 400, var: '--font-size-tiny' },
+  ].map((item) => (
+    <div key={item.name} style={{ display: 'flex', alignItems: 'baseline', gap: 24, padding: '16px 0', borderBottom: '1px solid #f0f0f0' }}>
+      <div style={{ width: 140, flexShrink: 0 }}>
+        <div style={{ fontSize: 12, fontWeight: 600, color: '#333' }}>{item.name}</div>
+        <div style={{ fontSize: 11, color: '#999', marginTop: 2 }}>{item.size}px / {item.lineHeight}px</div>
+      </div>
+      <div style={{ flex: 1, fontFamily: 'Mulish, sans-serif', fontSize: item.size, lineHeight: `${item.lineHeight}px`, fontWeight: item.weight }}>
+        The quick brown fox
+      </div>
     </div>
-    <code>--font-heading-h2-web-*</code>
-  </div>
-  <div style={{ fontSize: 16 }}>Body default sample (global.css baseline)</div>
+  ))}
 </div>
+
+---
+
+## Font weights
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, margin: '16px 0' }}>
+  <div style={{ padding: 16, border: '1px solid #e5e5e5', borderRadius: 8 }}>
+    <div style={{ fontFamily: 'Mulish, sans-serif', fontSize: 24, fontWeight: 400 }}>Regular (400)</div>
+    <code style={{ fontSize: 12 }}>--font-weight-regular</code>
+  </div>
+  <div style={{ padding: 16, border: '1px solid #e5e5e5', borderRadius: 8 }}>
+    <div style={{ fontFamily: 'Mulish, sans-serif', fontSize: 24, fontWeight: 700 }}>Bold (700)</div>
+    <code style={{ fontSize: 12 }}>--font-weight-bold</code>
+  </div>
+</div>
+
+---
+
+## Line heights
+
+| Token | Value | CSS variable |
+|-------|-------|-------------|
+| 16 | 16px | `--font-line-height-16` |
+| 20 | 20px | `--font-line-height-20` |
+| 24 | 24px | `--font-line-height-24` |
+| 28 | 28px | `--font-line-height-28` |
+| 32 | 32px | `--font-line-height-32` |
+| 40 | 40px | `--font-line-height-40` |
+| 48 | 48px | `--font-line-height-48` |
+| 56 | 56px | `--font-line-height-56` |
+
+---
+
+## Usage
+
+```css
+.page-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-line-height-48);
+}
+
+.body-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-line-height-24);
+}
+```

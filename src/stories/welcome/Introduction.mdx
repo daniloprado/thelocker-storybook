@@ -1,0 +1,132 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Welcome/Introduction" />
+
+<div style={{ maxWidth: 720 }}>
+
+# The Locker 2.0 Design System
+
+A unified component library and design token system that bridges **Figma** and **code**, ensuring pixel-perfect consistency across The Locker 2.0 product.
+
+---
+
+## What's inside
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, margin: '24px 0' }}>
+  <div style={{ padding: 16, borderRadius: 8, border: '1px solid #e5e5e5', background: '#fafafa' }}>
+    <div style={{ fontSize: 28, marginBottom: 8 }}>🎨</div>
+    <strong>Foundations</strong>
+    <p style={{ fontSize: 13, color: '#666', marginTop: 4 }}>Color, Typography, Spacing, Radius, Elevation & Motion — the building blocks every component is built on.</p>
+  </div>
+  <div style={{ padding: 16, borderRadius: 8, border: '1px solid #e5e5e5', background: '#fafafa' }}>
+    <div style={{ fontSize: 28, marginBottom: 8 }}>🔤</div>
+    <strong>Tokens</strong>
+    <p style={{ fontSize: 13, color: '#666', marginTop: 4 }}>CSS variables synced from Figma variables. Browse the full inventory and see how theme modes work.</p>
+  </div>
+  <div style={{ padding: 16, borderRadius: 8, border: '1px solid #e5e5e5', background: '#fafafa' }}>
+    <div style={{ fontSize: 28, marginBottom: 8 }}>🧩</div>
+    <strong>Components</strong>
+    <p style={{ fontSize: 13, color: '#666', marginTop: 4 }}>Production-ready React components with interactive docs, prop tables, and live examples.</p>
+  </div>
+</div>
+
+---
+
+## Components
+
+| Component | Description |
+|-----------|-------------|
+| **Avatar** | User photo, initials, or placeholder in multiple sizes and shapes |
+| **AvatarGroup** | Stacked collection of Avatars with overflow count |
+| **Button** | Primary, secondary, and ghost actions with size and state variants |
+| **Card** | Content container with title, description, tag, and image slots |
+| **Checkbox** | Selection control with selected, indeterminate, and disabled states |
+| **Chip** | Compact label for statuses and categories |
+| **Dialog** | Modal overlay for confirmations and focused tasks |
+| **DropArea** | Drag-and-drop file upload zone |
+| **FilterChip** | Toggleable filter pill with optional close action |
+| **Icon** | FontAwesome icon wrapper with size and style variants |
+| **Input** | Text field with label, helper, error states, and icons |
+| **List** | Vertical list with interactive or static items |
+| **MenuGroup** | Grouped section of menu items with optional heading |
+| **MenuItem** | Single row in a navigation or action menu |
+| **RadioButton** | Exclusive selection control within a group |
+| **Sidenav** | Collapsible sidebar navigation with nested items |
+| **Switch** | Boolean toggle with on/off states |
+| **Table** | Data grid with sorting, pagination, and row selection |
+| **Tabs** | Horizontal or vertical tab bar with active indicator |
+| **Tooltip** | Contextual hint on hover with configurable placement |
+| **TopBar** | Application header bar with title, actions, and branding |
+| **Widget** | Dashboard card with header, body, and optional actions |
+
+---
+
+## Getting started
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run Storybook locally
+
+```bash
+npm run storybook
+```
+
+This builds design tokens from Figma exports then starts Storybook at `http://localhost:6006`.
+
+### Use a component
+
+```tsx
+import { Button, Input, Avatar } from 'thelocker-storybook';
+
+function Example() {
+  return (
+    <div>
+      <Avatar size="medium" type="initials" fallback="DP" />
+      <Input label="Email" placeholder="you@example.com" />
+      <Button variant="primary" size="medium">Submit</Button>
+    </div>
+  );
+}
+```
+
+### Use a token
+
+```css
+.my-card {
+  background: var(--color-background-default);
+  border: 1px solid var(--color-stroke-neutral-strong);
+  border-radius: var(--radius-medium);
+  padding: var(--space-4);
+}
+```
+
+---
+
+## Figma ↔ Code
+
+This Storybook is connected to the Figma source file via **Code Connect**. Designers see the matching code snippet directly in Figma Dev Mode when they inspect a component.
+
+To re-publish after updating templates:
+
+```bash
+FIGMA_ACCESS_TOKEN=<token> npx figma connect publish
+```
+
+---
+
+## Project structure
+
+```
+src/
+├── components/       React components (.tsx, .css, .stories.tsx)
+├── figma/            Code Connect templates (.figma.ts)
+├── stories/          MDX documentation pages
+├── styles/           Global CSS (reset, fonts)
+└── tokens/           Figma token pipeline (raw → CSS + TS)
+```
+
+</div>
