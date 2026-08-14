@@ -8,6 +8,35 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 ---
 
+### August 14, 2026
+
+**Chip synced to latest Figma**
+
+- New `whiteStrong` color: white fill with Neutral/500 (`#241F20`) border, distinct from `white` (Grey/500 border).
+- Leading and trailing slots (`leading` / `trailing`). Figma booleans map to `showLeadingIcon` / `showTrailingIcon` and now default **off**.
+- Code Connect maps **White Strong** → `whiteStrong` and the slot booleans.
+
+**Tabs pill style composes Chip**
+
+- Pill tabs render `Chip`: active uses `whiteStrong`, inactive uses `neutral`.
+- Default size uses Chip Medium; Small uses Chip Small. Group gap is `--space-1` (4px).
+- Standard tabs follow Figma padding and type. `Tabs.Item` accepts optional `trailing` (e.g. calendar icon on default Standard).
+
+**Storybook docs**
+
+- New **Welcome/Introduction** page with overview, catalog, and getting started.
+- New **Foundations/Radius** page. Typography, Spacing, Elevation, and Motion pages expanded to show the full token scales.
+
+**Experiment: Dashboard**
+
+- Added a composed Dashboard story using App Shell, Table, Tabs, Chip, and other library components.
+
+**Figma Code Connect**
+
+- Published Code Connect templates for library components, including Avatar.
+
+---
+
 ### August 13, 2026
 
 **7 new components added from Figma**
