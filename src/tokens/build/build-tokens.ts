@@ -90,6 +90,31 @@ function formatTypographyScalar(variable: Variable, value: string | number): str
   return String(value);
 }
 
+function emitCssVariables(lines: string[], collections: Collection[]): void {
+  for (const collection of collections) {
+    const modeId = collection.modes[0]?.id;
+    if (!modeId) continue;
+
+    for (const variable of collection.variables) {
+      const value = variable.values[modeId];
+      if (value === undefined) continue;
+
+      if (variable.type === 'typography' && isTypographyObject(value)) {
+        const base = cssVarName(variable);
+        lines.push(`  ${base}-family: ${toCssValue(variable, value, 'family')};`);
+        lines.push(`  ${base}-size: ${toCssValue(variable, value, 'size')};`);
+        lines.push(`  ${base}-weight: ${toCssValue(variable, value, 'weight')};`);
+        lines.push(`  ${base}-line-height: ${toCssValue(variable, value, 'lineHeight')};`);
+        lines.push(`  ${base}-letter-spacing: ${toCssValue(variable, value, 'letterSpacing')};`);
+      } else if (variable.type === 'typography') {
+        lines.push(`  ${cssVarName(variable)}: ${formatTypographyScalar(variable, value as string | number)};`);
+      } else {
+        lines.push(`  ${cssVarName(variable)}: ${toCssValue(variable, value)};`);
+      }
+    }
+  }
+}
+
 function toCssValue(variable: Variable, value: string | number | TypographyValue, part?: keyof TypographyValue): string {
   if (variable.type === 'spacing' || variable.type === 'radius') {
     return `${value}px`;
@@ -110,65 +135,17 @@ function toCssValue(variable: Variable, value: string | number | TypographyValue
 
 function buildCss(raw: RawExport): string {
   const lines: string[] = [];
-  const firstCollection = raw.collections[0];
-  const firstMode = firstCollection?.modes[0]?.id;
+  const themeSlug = slug(raw.collections[0]?.modes[0]?.id || raw.collections[0]?.modes[0]?.name || 'light');
 
   lines.push('/* Auto-generated from src/tokens/figma/raw-export.json */');
-
-  if (firstCollection && firstMode) {
-    lines.push(':root {');
-    for (const variable of firstCollection.variables) {
-      const value = variable.values[firstMode];
-      if (value === undefined) continue;
-
-      if (variable.type === 'typography' && isTypographyObject(value)) {
-        const base = cssVarName(variable);
-        lines.push(`  ${base}-family: ${toCssValue(variable, value, 'family')};`);
-        lines.push(`  ${base}-size: ${toCssValue(variable, value, 'size')};`);
-        lines.push(`  ${base}-weight: ${toCssValue(variable, value, 'weight')};`);
-        lines.push(`  ${base}-line-height: ${toCssValue(variable, value, 'lineHeight')};`);
-        lines.push(`  ${base}-letter-spacing: ${toCssValue(variable, value, 'letterSpacing')};`);
-      } else if (variable.type === 'typography') {
-        lines.push(`  ${cssVarName(variable)}: ${formatTypographyScalar(variable, value as string | number)};`);
-      } else {
-        lines.push(`  ${cssVarName(variable)}: ${toCssValue(variable, value)};`);
-      }
-    }
-    lines.push('}');
-    lines.push('');
-  }
-
-  for (const collection of raw.collections) {
-    const collectionSlug = slug(collection.id || collection.name);
-    for (const mode of collection.modes) {
-      const modeSlug = slug(mode.id || mode.name);
-      const selector =
-        raw.collections.length === 1
-          ? `:root[data-theme="${modeSlug}"]`
-          : `:root[data-theme="${modeSlug}"][data-brand="${collectionSlug}"]`;
-
-      lines.push(`${selector} {`);
-      for (const variable of collection.variables) {
-        const value = variable.values[mode.id];
-        if (value === undefined) continue;
-
-        if (variable.type === 'typography' && isTypographyObject(value)) {
-          const base = cssVarName(variable);
-          lines.push(`  ${base}-family: ${toCssValue(variable, value, 'family')};`);
-          lines.push(`  ${base}-size: ${toCssValue(variable, value, 'size')};`);
-          lines.push(`  ${base}-weight: ${toCssValue(variable, value, 'weight')};`);
-          lines.push(`  ${base}-line-height: ${toCssValue(variable, value, 'lineHeight')};`);
-          lines.push(`  ${base}-letter-spacing: ${toCssValue(variable, value, 'letterSpacing')};`);
-        } else if (variable.type === 'typography') {
-          lines.push(`  ${cssVarName(variable)}: ${formatTypographyScalar(variable, value as string | number)};`);
-        } else {
-          lines.push(`  ${cssVarName(variable)}: ${toCssValue(variable, value)};`);
-        }
-      }
-      lines.push('}');
-      lines.push('');
-    }
-  }
+  lines.push(':root {');
+  emitCssVariables(lines, raw.collections);
+  lines.push('}');
+  lines.push('');
+  lines.push(`:root[data-theme="${themeSlug}"] {`);
+  emitCssVariables(lines, raw.collections);
+  lines.push('}');
+  lines.push('');
 
   return `${lines.join('\n').trim()}\n`;
 }

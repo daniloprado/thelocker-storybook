@@ -12,7 +12,7 @@ This folder contains token ingestion from Figma MCP, generated outputs, and runt
 
 ## Collections and modes
 
-- Collections: `Core` (inferred from MCP-exported variables)
+- Collections: `Primitives`, `Colors`, `Design`, `Typography` (from Figma local variable collections)
 - Modes: `Light`
 
 ## Primitive vs semantic

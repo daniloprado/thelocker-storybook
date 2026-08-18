@@ -2,7 +2,7 @@ import { Meta } from '@storybook/blocks';
 
 <Meta title="Welcome/Introduction" />
 
-<div style={{ maxWidth: 720 }}>
+<div style={{ maxWidth: 960 }}>
 
 # The Locker 2.0 Design System
 
@@ -34,30 +34,61 @@ A unified component library and design token system that bridges **Figma** and *
 
 ## Components
 
-| Component | Description |
-|-----------|-------------|
-| **Avatar** | User photo, initials, or placeholder in multiple sizes and shapes |
-| **AvatarGroup** | Stacked collection of Avatars with overflow count |
-| **Button** | Primary, secondary, and ghost actions with size and state variants |
-| **Card** | Content container with title, description, tag, and image slots |
-| **Checkbox** | Selection control with selected, indeterminate, and disabled states |
-| **Chip** | Compact label for statuses and categories |
-| **Dialog** | Modal overlay for confirmations and focused tasks |
-| **DropArea** | Drag-and-drop file upload zone |
-| **FilterChip** | Toggleable filter pill with optional close action |
-| **Icon** | FontAwesome icon wrapper with size and style variants |
-| **Input** | Text field with label, helper, error states, and icons |
-| **List** | Vertical list with interactive or static items |
-| **MenuGroup** | Grouped section of menu items with optional heading |
-| **MenuItem** | Single row in a navigation or action menu |
-| **RadioButton** | Exclusive selection control within a group |
-| **Sidenav** | Collapsible sidebar navigation with nested items |
-| **Switch** | Boolean toggle with on/off states |
-| **Table** | Data grid with sorting, pagination, and row selection |
-| **Tabs** | Horizontal or vertical tab bar with active indicator |
-| **Tooltip** | Contextual hint on hover with configurable placement |
-| **TopBar** | Application header bar with title, actions, and branding |
-| **Widget** | Dashboard card with header, body, and optional actions |
+Variant counts are the product of the main axes that define each component set in Figma and code (not every prop combination). **Code Connect** means a `.figma.ts` template is published for Dev Mode.
+
+<div style={{ overflowX: 'auto', margin: '16px 0' }}>
+  <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: 13 }}>
+    <thead>
+      <tr style={{ background: '#fafafa', textAlign: 'left' }}>
+        <th style={{ padding: '8px 12px', borderBottom: '2px solid #e5e5e5' }}>Component</th>
+        <th style={{ padding: '8px 12px', borderBottom: '2px solid #e5e5e5', textAlign: 'right' }}>Variants</th>
+        <th style={{ padding: '8px 12px', borderBottom: '2px solid #e5e5e5' }}>Axes</th>
+        <th style={{ padding: '8px 12px', borderBottom: '2px solid #e5e5e5', textAlign: 'center' }}>Code Connect</th>
+        <th style={{ padding: '8px 12px', borderBottom: '2px solid #e5e5e5' }}>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['Avatar', 'components-avatar', '45', 'Size × Shape × Type', true, 'Image, initials, or placeholder'],
+        ['AvatarGroup', 'components-avatar-avatar-group', '—', 'Composition', false, 'Stacked avatars with overflow count'],
+        ['Button', 'components-buttons', '90', 'Variant × Size × State × Action', true, 'Filled, outline, text; regular / destructive'],
+        ['Card', 'components-card', '4', 'Size', true, 'Optional image / top slot; yellow Chip tag'],
+        ['Checkbox', 'components-checkbox', '4', 'State', true, 'Unchecked, checked, indeterminate, disabled'],
+        ['Chip', 'components-chip', '30', 'Color × Size', true, 'Includes whiteStrong; leading / trailing slots'],
+        ['Dialog', 'components-dialog', '2', 'Variant', false, 'scroll and simple; overlay + heading slots'],
+        ['DropArea', 'components-droparea', '2', 'State', false, 'Default and active (drag-over)'],
+        ['FilterChip', 'components-filterchip', '3', 'State', true, 'Default, selected, disabled; optional close'],
+        ['Icon', 'components-icon', '18', 'Style × Size', true, 'Font Awesome Pro: solid, regular, light'],
+        ['Input', 'components-input', '9', 'Size × Status', true, 'Default, error, warning; prefix / suffix / clear'],
+        ['List', 'components-list', '—', 'Composition', false, 'Compound List + List.Item (text or avatar rows)'],
+        ['MenuGroup', 'components-menu-group', '—', 'Composition', false, 'Section wrapper with optional heading'],
+        ['MenuItem', 'components-menu-item', '5', 'State', true, 'Default, hover, selected, disabled, critical'],
+        ['RadioButton', 'components-radiobutton', '3', 'State', true, 'Unselected, selected, disabled'],
+        ['Sidenav', 'components-sidenav', '4', 'Nav item state', false, 'Collapsible sidebar; nested items'],
+        ['Switch', 'components-switch', '3', 'State', true, 'Off, on, disabled'],
+        ['Table', 'components-table', '3', 'Size', false, 'Sorting, pagination, custom cell render'],
+        ['Tabs', 'components-tabs', '8', 'Style × Size × Orientation', false, 'Standard or pill (pill composes Chip)'],
+        ['Tooltip', 'components-tooltip', '4', 'Position', true, 'Top, bottom, left, right'],
+        ['TopBar', 'components-top-bar', '—', 'Composition', false, 'App header: title, actions, branding'],
+        ['Widget', 'components-widget', '—', 'Composition', true, 'Dashboard card: header + body + action slot']
+      ].map(([name, docId, variants, axes, codeConnect, notes]) => (
+        <tr key={name} style={{ borderBottom: '1px solid #eee' }}>
+          <td style={{ padding: '8px 12px', fontWeight: 600 }}>
+            <a href={`./?path=/docs/${docId}--docs`} target="_top" style={{ color: '#1ea7fd', textDecoration: 'none' }}>
+              {name}
+            </a>
+          </td>
+          <td style={{ padding: '8px 12px', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{variants}</td>
+          <td style={{ padding: '8px 12px', color: '#555' }}>{axes}</td>
+          <td style={{ padding: '8px 12px', textAlign: 'center' }}>{codeConnect ? '✓' : '—'}</td>
+          <td style={{ padding: '8px 12px', color: '#666' }}>{notes}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+**22 components** total · **13** with Code Connect · Variant totals above cover combinatorial sets only
 
 ---
 

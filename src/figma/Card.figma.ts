@@ -10,6 +10,7 @@ const size = instance.getEnum('Property 1', {
   'Large': 'large',
   'Stretch': 'stretch',
 })
+const image = instance.getBoolean('Image')
 
 const title = instance.findText('Title')
 const description = instance.findText('Description')
@@ -20,8 +21,10 @@ export default {
   example: figma.code`
 <Card
   size="${size}"
+  ${image === false ? 'image={false}' : ''}
   title="${titleText}"
   description="${descText}"
+  tag="Label"
 />
   `,
   imports: ['import { Card } from "thelocker-storybook"'],

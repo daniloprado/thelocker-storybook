@@ -29,8 +29,8 @@ export type TokenCollection = {
 
 export const tokenCollections: TokenCollection[] = [
   {
-    "id": "core",
-    "name": "Core",
+    "id": "primitives",
+    "name": "Primitives",
     "modes": [
       {
         "id": "light",
@@ -79,46 +79,6 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
-        "name": "Grey/Lightest - 100",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#F8F8F8"
-        }
-      },
-      {
-        "name": "Grey/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#F3F3F3"
-        }
-      },
-      {
-        "name": "Grey/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#E7E7E7"
-        }
-      },
-      {
-        "name": "Grey/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#DBDBDB"
-        }
-      },
-      {
-        "name": "Grey/Dark - 600",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#B9B9B9"
-        }
-      },
-      {
         "name": "Yellow/100",
         "type": "color",
         "tier": "primitive",
@@ -152,46 +112,6 @@ export const tokenCollections: TokenCollection[] = [
       },
       {
         "name": "Yellow/600",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#D4A80D"
-        }
-      },
-      {
-        "name": "Yellow/Lightest - 100",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFF4CF"
-        }
-      },
-      {
-        "name": "Yellow/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFEDAF"
-        }
-      },
-      {
-        "name": "Yellow/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFDC60"
-        }
-      },
-      {
-        "name": "Yellow/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFCA10"
-        }
-      },
-      {
-        "name": "Yellow/Dark - 600",
         "type": "color",
         "tier": "primitive",
         "values": {
@@ -239,46 +159,6 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
-        "name": "Blue/Lightest - 100",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#D9EAFD"
-        }
-      },
-      {
-        "name": "Blue/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#BFDBFC"
-        }
-      },
-      {
-        "name": "Blue/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#80B8FA"
-        }
-      },
-      {
-        "name": "Blue/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#4094F7"
-        }
-      },
-      {
-        "name": "Blue/Dark - 600",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#357BCE"
-        }
-      },
-      {
         "name": "Green/100",
         "type": "color",
         "tier": "primitive",
@@ -312,46 +192,6 @@ export const tokenCollections: TokenCollection[] = [
       },
       {
         "name": "Green/600",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#3AA771"
-        }
-      },
-      {
-        "name": "Green/Lightest - 100",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#DAF4E7"
-        }
-      },
-      {
-        "name": "Green/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#C1EDD7"
-        }
-      },
-      {
-        "name": "Green/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#83DBAF"
-        }
-      },
-      {
-        "name": "Green/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#45C987"
-        }
-      },
-      {
-        "name": "Green/Dark - 600",
         "type": "color",
         "tier": "primitive",
         "values": {
@@ -399,46 +239,6 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
-        "name": "Red/Lightest - 100",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFDEE2"
-        }
-      },
-      {
-        "name": "Red/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFC9CF"
-        }
-      },
-      {
-        "name": "Red/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FF929E"
-        }
-      },
-      {
-        "name": "Red/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FF5C6E"
-        }
-      },
-      {
-        "name": "Red/Dark - 600",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#D44D5C"
-        }
-      },
-      {
         "name": "Orange/100",
         "type": "color",
         "tier": "primitive",
@@ -479,46 +279,6 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
-        "name": "Orange/Lightest - 100",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFEDDC"
-        }
-      },
-      {
-        "name": "Orange/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFE1C5"
-        }
-      },
-      {
-        "name": "Orange/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFC28A"
-        }
-      },
-      {
-        "name": "Orange/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FFA450"
-        }
-      },
-      {
-        "name": "Orange/Dark - 600",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#D48943"
-        }
-      },
-      {
         "name": "Neutral/200",
         "type": "color",
         "tier": "primitive",
@@ -541,31 +301,19 @@ export const tokenCollections: TokenCollection[] = [
         "values": {
           "light": "#241F20"
         }
-      },
+      }
+    ]
+  },
+  {
+    "id": "colors",
+    "name": "Colors",
+    "modes": [
       {
-        "name": "Neutral/Lighter - 200",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#B6B4B5"
-        }
-      },
-      {
-        "name": "Neutral/Light - 400",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#6D6A6A"
-        }
-      },
-      {
-        "name": "Neutral/Primary - 500",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#241F20"
-        }
-      },
+        "id": "light",
+        "name": "Light"
+      }
+    ],
+    "variables": [
       {
         "name": "Stroke/Primary/Strong",
         "type": "color",
@@ -596,6 +344,14 @@ export const tokenCollections: TokenCollection[] = [
         "tier": "semantic",
         "values": {
           "light": "#FFFFFF"
+        }
+      },
+      {
+        "name": "Stroke/Neutral/Stronger",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#B9B9B9"
         }
       },
       {
@@ -636,6 +392,14 @@ export const tokenCollections: TokenCollection[] = [
         "tier": "semantic",
         "values": {
           "light": "#D44D5C"
+        }
+      },
+      {
+        "name": "Text/Link",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#4094F7"
         }
       },
       {
@@ -751,6 +515,30 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
+        "name": "Icon/Primary",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#4094F7"
+        }
+      },
+      {
+        "name": "Icon/Success",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#45C987"
+        }
+      },
+      {
+        "name": "Icon/Warning",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#D44D5C"
+        }
+      },
+      {
         "name": "Icon/Invert/Strong",
         "type": "color",
         "tier": "semantic",
@@ -780,118 +568,6 @@ export const tokenCollections: TokenCollection[] = [
         "tier": "semantic",
         "values": {
           "light": "#241F20"
-        }
-      },
-      {
-        "name": "Icon/Success",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#45C987"
-        }
-      },
-      {
-        "name": "Icon/Warning",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#D44D5C"
-        }
-      },
-      {
-        "name": "Icon/Primary",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#4094F7"
-        }
-      },
-      {
-        "name": "Text/Link",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#4094F7"
-        }
-      },
-      {
-        "name": "Decorative/Blue/Strong",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#4094F7"
-        }
-      },
-      {
-        "name": "Decorative/Blue/Weak",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#D9EAFD"
-        }
-      },
-      {
-        "name": "Decorative/Yellow/Strong",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#D4A80D"
-        }
-      },
-      {
-        "name": "Decorative/Yellow/Weak",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#FFF4CF"
-        }
-      },
-      {
-        "name": "Decorative/Green/Strong",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#3AA771"
-        }
-      },
-      {
-        "name": "Decorative/Green/Weak",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#DAF4E7"
-        }
-      },
-      {
-        "name": "Decorative/Orange/Strong",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#D48943"
-        }
-      },
-      {
-        "name": "Decorative/Orange/Weak",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#FFEDDC"
-        }
-      },
-      {
-        "name": "Decorative/Pink/Strong",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#D48943"
-        }
-      },
-      {
-        "name": "Decorative/Pink/Weak",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#FFEDDC"
         }
       },
       {
@@ -981,41 +657,21 @@ export const tokenCollections: TokenCollection[] = [
         "values": {
           "light": "#FFCA10"
         }
-      },
+      }
+    ]
+  },
+  {
+    "id": "design",
+    "name": "Design",
+    "modes": [
       {
-        "name": "White/Primary - 500",
-        "type": "color",
-        "tier": "semantic",
-        "values": {
-          "light": "#FFFFFF"
-        }
-      },
+        "id": "light",
+        "name": "Light"
+      }
+    ],
+    "variables": [
       {
-        "name": "Black",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#151112"
-        }
-      },
-      {
-        "name": "Grey-50",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#FCFCFC"
-        }
-      },
-      {
-        "name": "Blue-50",
-        "type": "color",
-        "tier": "primitive",
-        "values": {
-          "light": "#EEF7FC"
-        }
-      },
-      {
-        "name": "Blue/Primary",
+        "name": "Decorative/Blue/Strong",
         "type": "color",
         "tier": "semantic",
         "values": {
@@ -1023,59 +679,75 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
-        "name": "grayscale/White",
+        "name": "Decorative/Blue/Weak",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#FFFFFF"
+          "light": "#D9EAFD"
         }
       },
       {
-        "name": "grayscale/Gray60",
+        "name": "Decorative/Yellow/Strong",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#DAE0E6"
+          "light": "#D4A80D"
         }
       },
       {
-        "name": "grayscale/Gray80",
+        "name": "Decorative/Yellow/Weak",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#AAAEB3"
+          "light": "#FFF4CF"
         }
       },
       {
-        "name": "Accent/Lighter Turquoise",
+        "name": "Decorative/Green/Strong",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#C0F1F4"
+          "light": "#3AA771"
         }
       },
       {
-        "name": "Accent/Primary Turquoise",
+        "name": "Decorative/Green/Weak",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#42D5DD"
+          "light": "#DAF4E7"
         }
       },
       {
-        "name": "Accent/Lighter Violet",
+        "name": "Decorative/Orange/Strong",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#F2D5FD"
+          "light": "#D48943"
         }
       },
       {
-        "name": "Accent/Primary Violet",
+        "name": "Decorative/Orange/Weak",
         "type": "color",
-        "tier": "primitive",
+        "tier": "semantic",
         "values": {
-          "light": "#D980FA"
+          "light": "#FFEDDC"
+        }
+      },
+      {
+        "name": "Decorative/Pink/Strong",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#D48943"
+        }
+      },
+      {
+        "name": "Decorative/Pink/Weak",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#FFEDDC"
         }
       },
       {
@@ -1197,7 +869,19 @@ export const tokenCollections: TokenCollection[] = [
         "values": {
           "light": 40
         }
-      },
+      }
+    ]
+  },
+  {
+    "id": "typography",
+    "name": "Typography",
+    "modes": [
+      {
+        "id": "light",
+        "name": "Light"
+      }
+    ],
+    "variables": [
       {
         "name": "Family/Heading",
         "type": "typography",
@@ -1365,10 +1049,12 @@ export const tokenCollections: TokenCollection[] = [
 export const tokenMeta = {
   "fileKey": "JpqUOwWPAM6x80LNylauHx",
   "sourceFile": "https://www.figma.com/design/JpqUOwWPAM6x80LNylauHx/The-Locker-2.0--Web-",
-  "extractedAt": "2026-04-15",
-  "sourceNodes": [],
+  "extractedAt": "2026-08-18",
+  "sourceNodes": [
+    "1404:417"
+  ],
   "limitations": [
-    "Variables extracted via Figma Plugin API (getLocalVariableCollectionsAsync). Color aliases resolved to final hex values."
+    "Variables extracted via Figma Plugin API (getLocalVariableCollectionsAsync). Color aliases resolved to final hex values. Collections match Figma: Primitives, Colors, Design, Typography."
   ]
 } as const;
 
@@ -1378,1154 +1064,846 @@ export const tokenNameToCssVar = [
     "cssVar": "--color-grey-100",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Grey/200",
     "cssVar": "--color-grey-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Grey/400",
     "cssVar": "--color-grey-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Grey/500",
     "cssVar": "--color-grey-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Grey/600",
     "cssVar": "--color-grey-600",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Grey/Lightest - 100",
-    "cssVar": "--color-grey-lightest-100",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Grey/Lighter - 200",
-    "cssVar": "--color-grey-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Grey/Light - 400",
-    "cssVar": "--color-grey-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Grey/Primary - 500",
-    "cssVar": "--color-grey-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Grey/Dark - 600",
-    "cssVar": "--color-grey-dark-600",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Yellow/100",
     "cssVar": "--color-yellow-100",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Yellow/200",
     "cssVar": "--color-yellow-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Yellow/400",
     "cssVar": "--color-yellow-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Yellow/500",
     "cssVar": "--color-yellow-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Yellow/600",
     "cssVar": "--color-yellow-600",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Yellow/Lightest - 100",
-    "cssVar": "--color-yellow-lightest-100",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Yellow/Lighter - 200",
-    "cssVar": "--color-yellow-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Yellow/Light - 400",
-    "cssVar": "--color-yellow-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Yellow/Primary - 500",
-    "cssVar": "--color-yellow-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Yellow/Dark - 600",
-    "cssVar": "--color-yellow-dark-600",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Blue/100",
     "cssVar": "--color-blue-100",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Blue/200",
     "cssVar": "--color-blue-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Blue/400",
     "cssVar": "--color-blue-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Blue/500",
     "cssVar": "--color-blue-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Blue/600",
     "cssVar": "--color-blue-600",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue/Lightest - 100",
-    "cssVar": "--color-blue-lightest-100",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue/Lighter - 200",
-    "cssVar": "--color-blue-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue/Light - 400",
-    "cssVar": "--color-blue-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue/Primary - 500",
-    "cssVar": "--color-blue-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue/Dark - 600",
-    "cssVar": "--color-blue-dark-600",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Green/100",
     "cssVar": "--color-green-100",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Green/200",
     "cssVar": "--color-green-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Green/400",
     "cssVar": "--color-green-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Green/500",
     "cssVar": "--color-green-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Green/600",
     "cssVar": "--color-green-600",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Green/Lightest - 100",
-    "cssVar": "--color-green-lightest-100",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Green/Lighter - 200",
-    "cssVar": "--color-green-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Green/Light - 400",
-    "cssVar": "--color-green-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Green/Primary - 500",
-    "cssVar": "--color-green-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Green/Dark - 600",
-    "cssVar": "--color-green-dark-600",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Red/100",
     "cssVar": "--color-red-100",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Red/200",
     "cssVar": "--color-red-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Red/400",
     "cssVar": "--color-red-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Red/500",
     "cssVar": "--color-red-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Red/600",
     "cssVar": "--color-red-600",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Red/Lightest - 100",
-    "cssVar": "--color-red-lightest-100",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Red/Lighter - 200",
-    "cssVar": "--color-red-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Red/Light - 400",
-    "cssVar": "--color-red-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Red/Primary - 500",
-    "cssVar": "--color-red-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Red/Dark - 600",
-    "cssVar": "--color-red-dark-600",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Orange/100",
     "cssVar": "--color-orange-100",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Orange/200",
     "cssVar": "--color-orange-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Orange/400",
     "cssVar": "--color-orange-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Orange/500",
     "cssVar": "--color-orange-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Orange/600",
     "cssVar": "--color-orange-600",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Orange/Lightest - 100",
-    "cssVar": "--color-orange-lightest-100",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Orange/Lighter - 200",
-    "cssVar": "--color-orange-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Orange/Light - 400",
-    "cssVar": "--color-orange-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Orange/Primary - 500",
-    "cssVar": "--color-orange-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Orange/Dark - 600",
-    "cssVar": "--color-orange-dark-600",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Neutral/200",
     "cssVar": "--color-neutral-200",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Neutral/400",
     "cssVar": "--color-neutral-400",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Neutral/500",
     "cssVar": "--color-neutral-500",
     "type": "color",
     "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Neutral/Lighter - 200",
-    "cssVar": "--color-neutral-lighter-200",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Neutral/Light - 400",
-    "cssVar": "--color-neutral-light-400",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Neutral/Primary - 500",
-    "cssVar": "--color-neutral-primary-500",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "primitives"
   },
   {
     "figmaName": "Stroke/Primary/Strong",
     "cssVar": "--color-stroke-primary-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Stroke/Primary/Weak",
     "cssVar": "--color-stroke-primary-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Stroke/Secondary/Strong",
     "cssVar": "--color-stroke-secondary-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Stroke/Secondary/Weak",
     "cssVar": "--color-stroke-secondary-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Stroke/Neutral/Stronger",
+    "cssVar": "--color-stroke-neutral-stronger",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
   },
   {
     "figmaName": "Stroke/Neutral/Strong",
     "cssVar": "--color-stroke-neutral-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Stroke/Neutral/Weak",
     "cssVar": "--color-stroke-neutral-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Text/Strong",
     "cssVar": "--color-text-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Text/Weak",
     "cssVar": "--color-text-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Text/Critical",
     "cssVar": "--color-text-critical",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Text/Invert/Strong",
-    "cssVar": "--color-text-invert-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Text/Invert/Weak",
-    "cssVar": "--color-text-invert-weak",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Text/On-primary/Strong",
-    "cssVar": "--color-text-on-primary-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Text/On-primary/Weak",
-    "cssVar": "--color-text-on-primary-weak",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Text/On-secondary/Strong",
-    "cssVar": "--color-text-on-secondary-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Text/On-secondary/Weak",
-    "cssVar": "--color-text-on-secondary-weak",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Background/Default",
-    "cssVar": "--color-background-default",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Background/Primary",
-    "cssVar": "--color-background-primary",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Background/Primary/Hover",
-    "cssVar": "--color-background-primary-hover",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Background/Secondary",
-    "cssVar": "--color-background-secondary",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Background/Secondary/Hover",
-    "cssVar": "--color-background-secondary-hover",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Background/Emphasis",
-    "cssVar": "--color-background-emphasis",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Strong",
-    "cssVar": "--color-icon-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Weak",
-    "cssVar": "--color-icon-weak",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Invert/Strong",
-    "cssVar": "--color-icon-invert-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Invert/Weak",
-    "cssVar": "--color-icon-invert-weak",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/On-primary/Strong",
-    "cssVar": "--color-icon-on-primary-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/On-secondary/Strong",
-    "cssVar": "--color-icon-on-secondary-strong",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Success",
-    "cssVar": "--color-icon-success",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Warning",
-    "cssVar": "--color-icon-warning",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Text/Default",
-    "cssVar": "--color-input-text-default",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Text/Placeholder",
-    "cssVar": "--color-input-text-placeholder",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Text/Disabled",
-    "cssVar": "--color-input-text-disabled",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Background/Default",
-    "cssVar": "--color-input-background-default",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Background/Focus",
-    "cssVar": "--color-input-background-focus",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Background/Disabled",
-    "cssVar": "--color-input-background-disabled",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Stroke/Default",
-    "cssVar": "--color-input-stroke-default",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Stroke/Focus",
-    "cssVar": "--color-input-stroke-focus",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Stroke/Disabled",
-    "cssVar": "--color-input-stroke-disabled",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Stroke/Error",
-    "cssVar": "--color-input-stroke-error",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Input/Stroke/Warning",
-    "cssVar": "--color-input-stroke-warning",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Icon/Primary",
-    "cssVar": "--color-icon-primary",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
   },
   {
     "figmaName": "Text/Link",
     "cssVar": "--color-text-link",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Text/Invert/Strong",
+    "cssVar": "--color-text-invert-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Text/Invert/Weak",
+    "cssVar": "--color-text-invert-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Text/On-primary/Strong",
+    "cssVar": "--color-text-on-primary-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Text/On-primary/Weak",
+    "cssVar": "--color-text-on-primary-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Text/On-secondary/Strong",
+    "cssVar": "--color-text-on-secondary-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Text/On-secondary/Weak",
+    "cssVar": "--color-text-on-secondary-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Background/Default",
+    "cssVar": "--color-background-default",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Background/Primary",
+    "cssVar": "--color-background-primary",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Background/Primary/Hover",
+    "cssVar": "--color-background-primary-hover",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Background/Secondary",
+    "cssVar": "--color-background-secondary",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Background/Secondary/Hover",
+    "cssVar": "--color-background-secondary-hover",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Background/Emphasis",
+    "cssVar": "--color-background-emphasis",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Strong",
+    "cssVar": "--color-icon-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Weak",
+    "cssVar": "--color-icon-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Primary",
+    "cssVar": "--color-icon-primary",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Success",
+    "cssVar": "--color-icon-success",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Warning",
+    "cssVar": "--color-icon-warning",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Invert/Strong",
+    "cssVar": "--color-icon-invert-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/Invert/Weak",
+    "cssVar": "--color-icon-invert-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/On-primary/Strong",
+    "cssVar": "--color-icon-on-primary-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Icon/On-secondary/Strong",
+    "cssVar": "--color-icon-on-secondary-strong",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Text/Default",
+    "cssVar": "--color-input-text-default",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Text/Placeholder",
+    "cssVar": "--color-input-text-placeholder",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Text/Disabled",
+    "cssVar": "--color-input-text-disabled",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Background/Default",
+    "cssVar": "--color-input-background-default",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Background/Focus",
+    "cssVar": "--color-input-background-focus",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Background/Disabled",
+    "cssVar": "--color-input-background-disabled",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Stroke/Default",
+    "cssVar": "--color-input-stroke-default",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Stroke/Focus",
+    "cssVar": "--color-input-stroke-focus",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Stroke/Disabled",
+    "cssVar": "--color-input-stroke-disabled",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Stroke/Error",
+    "cssVar": "--color-input-stroke-error",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Input/Stroke/Warning",
+    "cssVar": "--color-input-stroke-warning",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
   },
   {
     "figmaName": "Decorative/Blue/Strong",
     "cssVar": "--color-decorative-blue-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Blue/Weak",
     "cssVar": "--color-decorative-blue-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Yellow/Strong",
     "cssVar": "--color-decorative-yellow-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Yellow/Weak",
     "cssVar": "--color-decorative-yellow-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Green/Strong",
     "cssVar": "--color-decorative-green-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Green/Weak",
     "cssVar": "--color-decorative-green-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Orange/Strong",
     "cssVar": "--color-decorative-orange-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Orange/Weak",
     "cssVar": "--color-decorative-orange-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Pink/Strong",
     "cssVar": "--color-decorative-pink-strong",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Decorative/Pink/Weak",
     "cssVar": "--color-decorative-pink-weak",
     "type": "color",
     "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "White/Primary - 500",
-    "cssVar": "--color-white-primary-500",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Black",
-    "cssVar": "--color-black",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Grey-50",
-    "cssVar": "--color-grey-50",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue-50",
-    "cssVar": "--color-blue-50",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Blue/Primary",
-    "cssVar": "--color-blue-primary",
-    "type": "color",
-    "tier": "semantic",
-    "collection": "core"
-  },
-  {
-    "figmaName": "grayscale/White",
-    "cssVar": "--color-grayscale-white",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "grayscale/Gray60",
-    "cssVar": "--color-grayscale-gray60",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "grayscale/Gray80",
-    "cssVar": "--color-grayscale-gray80",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Accent/Lighter Turquoise",
-    "cssVar": "--color-accent-lighter-turquoise",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Accent/Primary Turquoise",
-    "cssVar": "--color-accent-primary-turquoise",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Accent/Lighter Violet",
-    "cssVar": "--color-accent-lighter-violet",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
-  },
-  {
-    "figmaName": "Accent/Primary Violet",
-    "cssVar": "--color-accent-primary-violet",
-    "type": "color",
-    "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/1",
     "cssVar": "--space-1",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/2",
     "cssVar": "--space-2",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/3",
     "cssVar": "--space-3",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/4",
     "cssVar": "--space-4",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/5",
     "cssVar": "--space-5",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/6",
     "cssVar": "--space-6",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/7",
     "cssVar": "--space-7",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Spacing/8",
     "cssVar": "--space-8",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Radius/Small",
     "cssVar": "--radius-small",
     "type": "radius",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Radius/Medium",
     "cssVar": "--radius-medium",
     "type": "radius",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Radius/Large",
     "cssVar": "--radius-large",
     "type": "radius",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Radius/Full",
     "cssVar": "--radius-full",
     "type": "radius",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Height/Small",
     "cssVar": "--space-height-small",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Height/Medium",
     "cssVar": "--space-height-medium",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Height/Large",
     "cssVar": "--space-height-large",
     "type": "spacing",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "design"
   },
   {
     "figmaName": "Family/Heading",
     "cssVar": "--font-family-heading",
     "type": "typography",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Family/Body",
     "cssVar": "--font-family-body",
     "type": "typography",
     "tier": "semantic",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Display",
     "cssVar": "--font-size-display",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Heading 1",
     "cssVar": "--font-size-heading-1",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Heading 2",
     "cssVar": "--font-size-heading-2",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Heading 3",
     "cssVar": "--font-size-heading-3",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Heading 4",
     "cssVar": "--font-size-heading-4",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Body",
     "cssVar": "--font-size-body",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Smaill",
     "cssVar": "--font-size-smaill",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Size/Tiny",
     "cssVar": "--font-size-tiny",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Weight/Regular",
     "cssVar": "--font-weight-regular",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Weight/Bold",
     "cssVar": "--font-weight-bold",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/16",
     "cssVar": "--font-line-height-16",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/20",
     "cssVar": "--font-line-height-20",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/24",
     "cssVar": "--font-line-height-24",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/28",
     "cssVar": "--font-line-height-28",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/32",
     "cssVar": "--font-line-height-32",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/40",
     "cssVar": "--font-line-height-40",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/48",
     "cssVar": "--font-line-height-48",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   },
   {
     "figmaName": "Line Height/56",
     "cssVar": "--font-line-height-56",
     "type": "typography",
     "tier": "primitive",
-    "collection": "core"
+    "collection": "typography"
   }
 ] as const;

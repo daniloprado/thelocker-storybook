@@ -128,9 +128,9 @@ import { Button } from 'thelocker-storybook';
       return `import { Card } from 'thelocker-storybook';
 
 <Card
-  title="Getting Started"
-  description="Free live masterclass covering setup."
-  tag="Master class"
+  title="Heading"
+  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  tag="Label"
   size="medium"
 />`;
     case 'Tabs':
