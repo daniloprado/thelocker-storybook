@@ -4,7 +4,7 @@
   --color-grey-200: #F3F3F3;
   --color-grey-400: #E7E7E7;
   --color-grey-500: #DBDBDB;
-  --color-grey-600: #B9B9B9;
+  --color-grey-600: #B6B6B6;
   --color-yellow-100: #FFF4CF;
   --color-yellow-200: #FFEDAF;
   --color-yellow-400: #FFDC60;
@@ -37,7 +37,7 @@
   --color-stroke-primary-weak: #D9EAFD;
   --color-stroke-secondary-strong: #FFFFFF;
   --color-stroke-secondary-weak: #FFFFFF;
-  --color-stroke-neutral-stronger: #B9B9B9;
+  --color-stroke-neutral-stronger: #B6B6B6;
   --color-stroke-neutral-strong: #DBDBDB;
   --color-stroke-neutral-weak: #F3F3F3;
   --color-text-strong: #241F20;
@@ -66,8 +66,8 @@
   --color-icon-on-primary-strong: #241F20;
   --color-icon-on-secondary-strong: #241F20;
   --color-input-text-default: #241F20;
-  --color-input-text-placeholder: #B9B9B9;
-  --color-input-text-disabled: #B9B9B9;
+  --color-input-text-placeholder: #B6B6B6;
+  --color-input-text-disabled: #B6B6B6;
   --color-input-background-default: #FFFFFF;
   --color-input-background-focus: #FFFFFF;
   --color-input-background-disabled: #F3F3F3;
@@ -128,7 +128,7 @@
   --color-grey-200: #F3F3F3;
   --color-grey-400: #E7E7E7;
   --color-grey-500: #DBDBDB;
-  --color-grey-600: #B9B9B9;
+  --color-grey-600: #B6B6B6;
   --color-yellow-100: #FFF4CF;
   --color-yellow-200: #FFEDAF;
   --color-yellow-400: #FFDC60;
@@ -161,7 +161,7 @@
   --color-stroke-primary-weak: #D9EAFD;
   --color-stroke-secondary-strong: #FFFFFF;
   --color-stroke-secondary-weak: #FFFFFF;
-  --color-stroke-neutral-stronger: #B9B9B9;
+  --color-stroke-neutral-stronger: #B6B6B6;
   --color-stroke-neutral-strong: #DBDBDB;
   --color-stroke-neutral-weak: #F3F3F3;
   --color-text-strong: #241F20;
@@ -190,8 +190,8 @@
   --color-icon-on-primary-strong: #241F20;
   --color-icon-on-secondary-strong: #241F20;
   --color-input-text-default: #241F20;
-  --color-input-text-placeholder: #B9B9B9;
-  --color-input-text-disabled: #B9B9B9;
+  --color-input-text-placeholder: #B6B6B6;
+  --color-input-text-disabled: #B6B6B6;
   --color-input-background-default: #FFFFFF;
   --color-input-background-focus: #FFFFFF;
   --color-input-background-disabled: #F3F3F3;

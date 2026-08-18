@@ -75,7 +75,7 @@ export const tokenCollections: TokenCollection[] = [
         "type": "color",
         "tier": "primitive",
         "values": {
-          "light": "#B9B9B9"
+          "light": "#B6B6B6"
         }
       },
       {
@@ -351,7 +351,7 @@ export const tokenCollections: TokenCollection[] = [
         "type": "color",
         "tier": "semantic",
         "values": {
-          "light": "#B9B9B9"
+          "light": "#B6B6B6"
         }
       },
       {
@@ -583,7 +583,7 @@ export const tokenCollections: TokenCollection[] = [
         "type": "color",
         "tier": "semantic",
         "values": {
-          "light": "#B9B9B9"
+          "light": "#B6B6B6"
         }
       },
       {
@@ -591,7 +591,7 @@ export const tokenCollections: TokenCollection[] = [
         "type": "color",
         "tier": "semantic",
         "values": {
-          "light": "#B9B9B9"
+          "light": "#B6B6B6"
         }
       },
       {
