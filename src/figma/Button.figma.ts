@@ -5,7 +5,13 @@ import figma from 'figma'
 const instance = figma.selectedInstance
 
 const label = instance.getString('Label')
-const variant = instance.getEnum('Type', {
+const variant = instance.getEnum('Style', {
+  'Primary': 'primary',
+  'Secondary': 'secondary',
+  'Neutral': 'neutral',
+  'Destructive': 'destructive',
+})
+const appearance = instance.getEnum('Type', {
   'Filled': 'filled',
   'Outline': 'outline',
   'Text': 'text',
@@ -23,19 +29,19 @@ const state = instance.getEnum('State', {
   'Focus': 'focus',
   'Disabled': 'disabled',
 })
-const action = instance.getEnum('Action', {
-  'Regular': 'regular',
-  'Destructive': 'destructive',
-})
+const leadingIcon = instance.getBoolean('Leading Icon')
+const trailingIcon = instance.getBoolean('Trailing Icon')
 
 export default {
   example: figma.code`
 <Button
   label="${label}"
   variant="${variant}"
+  appearance="${appearance}"
   size="${size}"
-  state="${state}"
-  action="${action}"
+  ${state !== 'default' ? `state="${state}"` : ''}
+  ${leadingIcon ? 'leadingIcon' : ''}
+  ${trailingIcon ? 'trailingIcon' : ''}
 />
   `,
   imports: ['import { Button } from "thelocker-storybook"'],

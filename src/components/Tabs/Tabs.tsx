@@ -1,16 +1,24 @@
 import { createContext, useContext, type ReactNode } from 'react';
 import { Chip } from '../Chip/Chip';
+import type { ChipSize } from '../Chip/Chip';
 import './Tabs.css';
 
-export type TabsSize = 'default' | 'small';
+/**
+ * Figma Tab Item / Tab Group **Size**.
+ * Standard style exists in Figma as Default and Small; Large falls back to Default metrics.
+ * Pill style maps Small → Chip Small, Default → Chip Medium, Large → Chip Large.
+ */
+export type TabsSize = 'small' | 'default' | 'large';
 export type TabsOrientation = 'horizontal' | 'vertical';
+/** Figma **Style**: Standard (Figma "Default") or Pill. */
 export type TabsStyle = 'standard' | 'pill';
 
 export interface TabItemProps {
   label: string;
+  /** Figma State=Active. */
   active?: boolean;
   onClick?: () => void;
-  /** Optional trailing content (Figma: Icon button on default Standard active tabs). Ignored for pill style. */
+  /** Optional trailing content (Figma: Icon button on Standard active tabs). Ignored for pill style. */
   trailing?: ReactNode;
   className?: string;
 }
@@ -33,6 +41,12 @@ const TabsContext = createContext<TabsContextValue>({
   tabStyle: 'standard'
 });
 
+const PILL_CHIP_SIZE: Record<TabsSize, ChipSize> = {
+  small: 'small',
+  default: 'medium',
+  large: 'large'
+};
+
 function cx(...values: Array<string | false | null | undefined>) {
   return values.filter(Boolean).join(' ');
 }
@@ -40,7 +54,6 @@ function cx(...values: Array<string | false | null | undefined>) {
 function TabItem({ label, active = false, onClick, trailing, className }: TabItemProps) {
   const { size, tabStyle } = useContext(TabsContext);
   const isPill = tabStyle === 'pill';
-  const chipSize = size === 'small' ? 'small' : 'medium';
 
   return (
     <button
@@ -51,7 +64,7 @@ function TabItem({ label, active = false, onClick, trailing, className }: TabIte
       onClick={onClick}
     >
       {isPill ? (
-        <Chip label={label} size={chipSize} color={active ? 'whiteStrong' : 'neutral'} />
+        <Chip label={label} size={PILL_CHIP_SIZE[size]} color={active ? 'whiteStrong' : 'neutral'} />
       ) : (
         <>
           <span className="tabs__label">{label}</span>

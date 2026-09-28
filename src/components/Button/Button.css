@@ -1,13 +1,24 @@
+/*
+ * Button — synced with Figma set 6:410
+ * Axes: Style (variant) × Type (appearance) × Size × State
+ * Focus rings are 3px inside strokes in Figma: 1px border + 2px inset shadow.
+ */
+
 .button {
+  --button-ring: transparent;
   border: 1px solid transparent;
   border-radius: var(--radius-small, 4px);
-  font-family: 'Mulish', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-body, Mulish), Inter, system-ui, sans-serif;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-2, 8px);
   white-space: nowrap;
-  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  box-sizing: border-box;
+  background: transparent;
+  color: var(--color-neutral-500, #241f20);
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
 }
 
 .button:focus-visible {
@@ -18,254 +29,279 @@
   cursor: not-allowed;
 }
 
+.button__label {
+  display: inline-block;
+}
+
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: currentColor;
+}
+
+/* ---------- Size ---------- */
+
 .button--large {
   height: 40px;
-  min-width: 73px;
-  padding: 8px 16px;
+  padding: var(--space-2, 8px) var(--space-4, 16px);
   font-size: var(--font-size-body, 16px);
   line-height: var(--line-height-24, 24px);
 }
 
 .button--medium {
   height: 32px;
-  min-width: 60px;
-  padding: 4px 12px;
+  padding: var(--space-1, 4px) var(--space-3, 12px);
   font-size: var(--font-size-smaill, 14px);
   line-height: var(--line-height-20, 20px);
 }
 
 .button--small {
   height: 24px;
-  min-width: 52px;
-  padding: 0 8px;
+  padding: 0 var(--space-2, 8px);
   font-size: var(--font-size-smaill, 14px);
   line-height: var(--line-height-20, 20px);
 }
 
-.button--filled.button--regular.button--default {
-  background: var(--color-yellow-primary-500, #ffca10);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--filled.button--regular.button--hover,
-.button--filled.button--regular.button--active {
-  background: var(--color-yellow-dark-600, #d4a80d);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--filled.button--regular.button--focus {
-  background: var(--color-yellow-primary-500, #ffca10);
-  color: var(--color-neutral-primary-500, #241f20);
-  box-shadow: 0 0 0 2px var(--color-blue-lighter-200, #bfdbfc);
-}
-
-.button--filled.button--regular.button--disabled {
-  background: var(--color-yellow-light-400, #ffdc60);
-  color: var(--color-neutral-light-400, #6d6a6a);
-}
-
-.button--filled.button--destructive.button--default {
-  background: var(--color-red-primary-500, #ff5c6e);
-  color: var(--color-white-primary-500, #ffffff);
-}
-
-.button--filled.button--destructive.button--hover,
-.button--filled.button--destructive.button--active {
-  background: var(--color-red-dark-600, #d44d5c);
-  color: var(--color-white-primary-500, #ffffff);
-}
-
-.button--filled.button--destructive.button--focus {
-  background: var(--color-red-primary-500, #ff5c6e);
-  color: var(--color-white-primary-500, #ffffff);
-  box-shadow: 0 0 0 2px var(--color-red-lighter-200, #ffc9cf);
-}
-
-.button--filled.button--destructive.button--disabled {
-  background: var(--color-red-light-400, #ff929e);
-  color: var(--color-white-primary-500, #ffffff);
-}
-
-.button--outline {
-  background: var(--color-white-primary-500, #ffffff);
-}
-
-.button--outline.button--regular.button--default {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--outline.button--regular.button--hover {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  background: var(--color-grey-lightest-100, #f8f8f8);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--outline.button--regular.button--active {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  background: var(--color-grey-lighter-200, #f3f3f3);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--outline.button--regular.button--focus {
-  border-color: var(--color-blue-lighter-200, #bfdbfc);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--outline.button--regular.button--disabled {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  color: var(--color-neutral-lighter-200, #b6b4b5);
-}
-
-.button--outline.button--destructive.button--default {
-  border-color: var(--color-red-lighter-200, #ffc9cf);
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--outline.button--destructive.button--hover,
-.button--outline.button--destructive.button--active {
-  border-color: var(--color-red-lighter-200, #ffc9cf);
-  background: var(--color-red-lighter-200, #ffc9cf);
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--outline.button--destructive.button--focus {
-  border-color: var(--color-red-light-400, #ff929e);
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--outline.button--destructive.button--disabled {
-  border-color: var(--color-red-lighter-200, #ffc9cf);
-  color: var(--color-red-light-400, #ff929e);
-}
-
+/* Text type is inline: no padding, hugs its label. */
 .button--text {
+  height: auto;
+  padding: 0;
+}
+
+/* ---------- Type: weight ---------- */
+
+.button--filled {
+  font-weight: 700;
+}
+
+.button--outline,
+.button--ghost,
+.button--text {
+  font-weight: 400;
+}
+
+/* ---------- Focus ring helper ---------- */
+
+.button--focus,
+.button--interactive:not(:disabled):focus-visible {
+  border-color: var(--button-ring);
+  box-shadow: inset 0 0 0 2px var(--button-ring);
+}
+
+/* =========================================================
+ * Style=Secondary, Type=Filled (yellow) — Figma default
+ * ======================================================= */
+
+.button--secondary.button--filled {
+  --button-ring: var(--color-yellow-400, #ffdc60);
+  background: var(--color-yellow-500, #ffca10);
+  color: var(--color-neutral-500, #241f20);
+}
+
+.button--secondary.button--filled.button--hover,
+.button--secondary.button--filled.button--active,
+.button--secondary.button--filled.button--interactive:not(:disabled):hover,
+.button--secondary.button--filled.button--interactive:not(:disabled):active {
+  background: var(--color-yellow-600, #d4a80d);
+}
+
+.button--secondary.button--filled.button--disabled {
+  background: var(--color-yellow-400, #ffdc60);
+  color: var(--color-neutral-400, #6d6a6a);
+}
+
+/* =========================================================
+ * Style=Primary, Type=Filled (blue)
+ * ======================================================= */
+
+.button--primary.button--filled {
+  --button-ring: var(--color-blue-200, #bfdbfc);
+  background: var(--color-blue-500, #4094f7);
+  color: var(--color-text-invert-strong, #f8f8f8);
+}
+
+.button--primary.button--filled.button--hover,
+.button--primary.button--filled.button--interactive:not(:disabled):hover {
+  background: var(--color-blue-600, #357bce);
+}
+
+.button--primary.button--filled.button--active,
+.button--primary.button--filled.button--interactive:not(:disabled):active {
+  background: var(--color-blue-500, #4094f7);
+}
+
+.button--primary.button--filled.button--disabled {
+  background: var(--color-blue-400, #80b8fa);
+}
+
+/* =========================================================
+ * Style=Destructive, Type=Filled (red)
+ * ======================================================= */
+
+.button--destructive.button--filled {
+  --button-ring: var(--color-red-400, #ff929e);
+  background: var(--color-red-500, #ff5c6e);
+  color: var(--color-background-default, #ffffff);
+}
+
+.button--destructive.button--filled.button--hover,
+.button--destructive.button--filled.button--active,
+.button--destructive.button--filled.button--interactive:not(:disabled):hover,
+.button--destructive.button--filled.button--interactive:not(:disabled):active {
+  background: var(--color-red-600, #d44d5c);
+}
+
+.button--destructive.button--filled.button--disabled {
+  background: var(--color-red-400, #ff929e);
+}
+
+/* =========================================================
+ * Style=Neutral, Type=Outline
+ * ======================================================= */
+
+.button--neutral.button--outline {
+  --button-ring: var(--color-blue-200, #bfdbfc);
+  background: var(--color-background-default, #ffffff);
+  border-color: var(--color-stroke-neutral-strong, #dbdbdb);
+  color: var(--color-neutral-500, #241f20);
+}
+
+.button--neutral.button--outline.button--hover,
+.button--neutral.button--outline.button--interactive:not(:disabled):hover {
   background: transparent;
+  border-color: var(--color-stroke-neutral-stronger, #b6b6b6);
+}
+
+.button--neutral.button--outline.button--active,
+.button--neutral.button--outline.button--interactive:not(:disabled):active {
+  background: transparent;
+  border-color: var(--color-stroke-neutral-strongest, #241f20);
+}
+
+.button--neutral.button--outline.button--focus,
+.button--neutral.button--outline.button--interactive:not(:disabled):focus-visible {
+  background: var(--color-background-default, #ffffff);
+}
+
+.button--neutral.button--outline.button--disabled {
+  border-color: var(--color-grey-400, #e7e7e7);
+  color: var(--color-neutral-200, #b6b4b5);
+}
+
+/* =========================================================
+ * Style=Destructive, Type=Outline
+ * ======================================================= */
+
+.button--destructive.button--outline {
+  --button-ring: var(--color-red-200, #ffc9cf);
+  background: var(--color-background-default, #ffffff);
+  border-color: var(--color-red-200, #ffc9cf);
+  color: var(--color-red-600, #d44d5c);
+}
+
+.button--destructive.button--outline.button--hover,
+.button--destructive.button--outline.button--active,
+.button--destructive.button--outline.button--interactive:not(:disabled):hover,
+.button--destructive.button--outline.button--interactive:not(:disabled):active {
+  background: var(--color-red-200, #ffc9cf);
+  border-color: var(--color-red-400, #ff929e);
+}
+
+.button--destructive.button--outline.button--disabled {
+  color: var(--color-red-400, #ff929e);
+}
+
+/* =========================================================
+ * Style=Neutral, Type=Ghost
+ * ======================================================= */
+
+.button--neutral.button--ghost {
+  --button-ring: var(--color-grey-400, #e7e7e7);
+  background: transparent;
+  color: var(--color-neutral-500, #241f20);
+}
+
+.button--neutral.button--ghost.button--hover,
+.button--neutral.button--ghost.button--interactive:not(:disabled):hover {
+  background: var(--color-grey-200, #f3f3f3);
+}
+
+.button--neutral.button--ghost.button--active,
+.button--neutral.button--ghost.button--interactive:not(:disabled):active {
+  background: var(--color-background-default, #ffffff);
+  color: var(--color-blue-600, #357bce);
+}
+
+.button--neutral.button--ghost.button--focus,
+.button--neutral.button--ghost.button--interactive:not(:disabled):focus-visible {
+  background: var(--color-background-default, #ffffff);
+}
+
+.button--neutral.button--ghost.button--disabled {
+  background: var(--color-background-default, #ffffff);
+  color: var(--color-neutral-200, #b6b4b5);
+}
+
+/* =========================================================
+ * Style=Neutral, Type=Text
+ * ======================================================= */
+
+.button--neutral.button--text {
+  --button-ring: var(--color-blue-200, #bfdbfc);
+  color: var(--color-neutral-500, #241f20);
+}
+
+.button--neutral.button--text.button--active,
+.button--neutral.button--text.button--interactive:not(:disabled):active {
+  color: var(--color-blue-600, #357bce);
+}
+
+.button--neutral.button--text.button--disabled {
+  color: var(--color-neutral-200, #b6b4b5);
+}
+
+/* =========================================================
+ * Style=Primary, Type=Text (link)
+ * ======================================================= */
+
+.button--primary.button--text {
+  --button-ring: var(--color-blue-200, #bfdbfc);
+  color: var(--color-text-link, #4094f7);
+}
+
+.button--primary.button--text.button--hover,
+.button--primary.button--text.button--interactive:not(:disabled):hover {
+  color: var(--color-blue-600, #357bce);
+}
+
+.button--primary.button--text.button--disabled {
+  color: var(--color-blue-400, #80b8fa);
+}
+
+/* =========================================================
+ * Style=Destructive, Type=Text
+ * ======================================================= */
+
+.button--destructive.button--text {
+  --button-ring: var(--color-red-400, #ff929e);
+  color: var(--color-text-critical, #d44d5c);
+}
+
+.button--destructive.button--text.button--hover,
+.button--destructive.button--text.button--interactive:not(:disabled):hover {
+  color: var(--color-red-600, #d44d5c);
+  background: var(--color-red-200, #ffc9cf);
+}
+
+.button--destructive.button--text.button--disabled {
+  color: var(--color-red-400, #ff929e);
+}
+
+/* Focus rings on Text type sit outside the label (no padding to hold an inset ring). */
+.button--text.button--focus,
+.button--text.button--interactive:not(:disabled):focus-visible {
   border-color: transparent;
-}
-
-.button--text.button--regular.button--default {
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--text.button--regular.button--hover {
-  background: var(--color-grey-lighter-200, #f3f3f3);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--text.button--regular.button--active {
-  color: var(--color-blue-dark-600, #357bce);
-}
-
-.button--text.button--regular.button--focus {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  background: var(--color-white-primary-500, #ffffff);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--text.button--regular.button--disabled {
-  color: var(--color-neutral-lighter-200, #b6b4b5);
-}
-
-.button--text.button--destructive.button--default,
-.button--text.button--destructive.button--active {
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--text.button--destructive.button--hover {
-  color: var(--color-red-dark-600, #d44d5c);
-  background: var(--color-red-lighter-200, #ffc9cf);
-}
-
-.button--text.button--destructive.button--focus {
-  border-color: var(--color-red-light-400, #ff929e);
-  background: var(--color-white-primary-500, #ffffff);
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--text.button--destructive.button--disabled {
-  color: var(--color-red-light-400, #ff929e);
-}
-
-.button--interactive.button--filled.button--regular:not(:disabled):hover,
-.button--interactive.button--filled.button--regular:not(:disabled):active {
-  background: var(--color-yellow-dark-600, #d4a80d);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--interactive.button--filled.button--regular:not(:disabled):focus-visible {
-  background: var(--color-yellow-primary-500, #ffca10);
-  color: var(--color-neutral-primary-500, #241f20);
-  box-shadow: 0 0 0 2px var(--color-blue-lighter-200, #bfdbfc);
-}
-
-.button--interactive.button--filled.button--destructive:not(:disabled):hover,
-.button--interactive.button--filled.button--destructive:not(:disabled):active {
-  background: var(--color-red-dark-600, #d44d5c);
-  color: var(--color-white-primary-500, #ffffff);
-}
-
-.button--interactive.button--filled.button--destructive:not(:disabled):focus-visible {
-  background: var(--color-red-primary-500, #ff5c6e);
-  color: var(--color-white-primary-500, #ffffff);
-  box-shadow: 0 0 0 2px var(--color-red-lighter-200, #ffc9cf);
-}
-
-.button--interactive.button--outline.button--regular:not(:disabled):hover {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  background: var(--color-grey-lightest-100, #f8f8f8);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--interactive.button--outline.button--regular:not(:disabled):active {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  background: var(--color-grey-lighter-200, #f3f3f3);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--interactive.button--outline.button--regular:not(:disabled):focus-visible {
-  border-color: var(--color-blue-lighter-200, #bfdbfc);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--interactive.button--outline.button--destructive:not(:disabled):hover,
-.button--interactive.button--outline.button--destructive:not(:disabled):active {
-  border-color: var(--color-red-lighter-200, #ffc9cf);
-  background: var(--color-red-lighter-200, #ffc9cf);
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--interactive.button--outline.button--destructive:not(:disabled):focus-visible {
-  border-color: var(--color-red-light-400, #ff929e);
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--interactive.button--text.button--regular:not(:disabled):hover {
-  background: var(--color-grey-lighter-200, #f3f3f3);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--interactive.button--text.button--regular:not(:disabled):active {
-  color: var(--color-blue-dark-600, #357bce);
-}
-
-.button--interactive.button--text.button--regular:not(:disabled):focus-visible {
-  border-color: var(--color-grey-light-400, #e7e7e7);
-  background: var(--color-white-primary-500, #ffffff);
-  color: var(--color-neutral-primary-500, #241f20);
-}
-
-.button--interactive.button--text.button--destructive:not(:disabled):hover {
-  color: var(--color-red-dark-600, #d44d5c);
-  background: var(--color-red-lighter-200, #ffc9cf);
-}
-
-.button--interactive.button--text.button--destructive:not(:disabled):active {
-  color: var(--color-red-dark-600, #d44d5c);
-}
-
-.button--interactive.button--text.button--destructive:not(:disabled):focus-visible {
-  border-color: var(--color-red-light-400, #ff929e);
-  background: var(--color-white-primary-500, #ffffff);
-  color: var(--color-red-dark-600, #d44d5c);
+  box-shadow: 0 0 0 2px var(--button-ring);
 }

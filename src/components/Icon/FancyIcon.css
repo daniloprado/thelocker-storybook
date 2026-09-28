@@ -1,0 +1,44 @@
+/*
+ * Fancy Icon — synced with Figma set 1537:226
+ * A tinted square container around an Icon. Size × Color.
+ */
+
+.fancy-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+/* ---------- Size ---------- */
+
+.fancy-icon--small {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-small, 4px);
+}
+
+.fancy-icon--medium {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-small, 4px);
+}
+
+.fancy-icon--large {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-medium, 8px);
+}
+
+/* ---------- Color ---------- */
+
+.fancy-icon--blue {
+  background: var(--color-decorative-blue-weak, #d9eafd);
+  color: var(--color-decorative-blue-strong, #4094f7);
+}
+
+.fancy-icon--neutral {
+  background: var(--color-grey-200, #f3f3f3);
+  color: var(--color-grey-600, #b6b6b6);
+}

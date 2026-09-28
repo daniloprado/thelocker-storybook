@@ -153,7 +153,8 @@ export function Table({
         <div className="table__pagination">
           <Button
             className="table__pagination-btn"
-            variant="outline"
+            variant="neutral"
+            appearance="outline"
             size="small"
             state={currentPage === 1 ? 'disabled' : 'default'}
             label="Prev"
@@ -165,7 +166,8 @@ export function Table({
             <Button
               key={page}
               className="table__pagination-btn"
-              variant="outline"
+              variant="neutral"
+              appearance="outline"
               size="small"
               state={page === currentPage ? 'active' : 'default'}
               label={String(page)}
@@ -176,7 +178,8 @@ export function Table({
 
           <Button
             className="table__pagination-btn"
-            variant="outline"
+            variant="neutral"
+            appearance="outline"
             size="small"
             state={currentPage === totalPages ? 'disabled' : 'default'}
             label="Next"

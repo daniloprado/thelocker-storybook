@@ -10,6 +10,11 @@ const size = instance.getEnum('Property 1', {
   'Large': 'large',
   'Stretch': 'stretch',
 })
+const type = instance.getEnum('Type', {
+  'Empty': 'empty',
+  'Vertical': 'vertical',
+  'Horizontal': 'horizontal',
+})
 const image = instance.getBoolean('Image')
 
 const title = instance.findText('Title')
@@ -21,6 +26,7 @@ export default {
   example: figma.code`
 <Card
   size="${size}"
+  type="${type}"
   ${image === false ? 'image={false}' : ''}
   title="${titleText}"
   description="${descText}"

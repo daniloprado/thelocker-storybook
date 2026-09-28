@@ -1,0 +1,44 @@
+/*
+ * Empty State — synced with Figma component 1537:506
+ * Vertical stack, centered, 8px gap, 212px wide by default.
+ */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2, 8px);
+  width: 212px;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: var(--font-family-body, Mulish), Inter, system-ui, sans-serif;
+  color: var(--color-text-weak, #6d6a6a);
+}
+
+.empty-state__icon,
+.empty-state__action {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.empty-state__heading {
+  margin: 0;
+  width: 100%;
+  font-weight: 700;
+  font-size: var(--font-size-body, 16px);
+  line-height: 1.2;
+  color: var(--color-text-weak, #6d6a6a);
+  overflow-wrap: break-word;
+}
+
+.empty-state__description {
+  margin: 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: var(--font-size-smaill, 14px);
+  line-height: var(--line-height-20, 20px);
+  color: var(--color-text-weak, #6d6a6a);
+  overflow-wrap: break-word;
+}

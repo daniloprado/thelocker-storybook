@@ -30,10 +30,11 @@ function defaultSnippet(relativePath: string): string {
 
 <Button
   label="Save"
-  variant="filled"
+  variant="secondary"
+  appearance="filled"
   size="medium"
-  state="default"
-  action="regular"
+  leadingIcon
+  leadingIconCode="floppy-disk"
 />`;
     case 'Chip':
       return `import { Chip } from 'thelocker-storybook';
@@ -117,8 +118,8 @@ import { Button } from 'thelocker-storybook';
   onClose={() => {}}
   footer={
     <>
-      <Button label="Cancel" variant="outline" size="large" />
-      <Button label="Confirm" variant="filled" size="large" />
+      <Button label="Cancel" variant="neutral" appearance="outline" size="large" />
+      <Button label="Confirm" appearance="filled" size="large" />
     </>
   }
 >

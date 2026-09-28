@@ -8,6 +8,58 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 ---
 
+### September 28, 2026
+
+**Button synced to latest Figma (135 variants)**
+
+- Props now mirror the Figma set: `variant` = **Style** (`primary`, `secondary`, `neutral`, `destructive`), `appearance` = **Type** (`filled`, `outline`, `text`, `ghost`), plus `size` and `state`.
+- New `leadingIcon` / `trailingIcon` booleans (Figma Leading / Trailing Icon) with `leadingIconCode` / `trailingIconCode` and `leading` / `trailing` slots. Icons use the Icon component (16px Large/Medium, 12px Small).
+- Defaults match Figma: Secondary, Filled, Large. `action` prop removed; use `variant="destructive"`.
+- Filled types use Bold; Outline, Ghost and Text use Regular. Text type has no padding and hugs the label.
+- Focus is a 3px inside ring per style (Yellow/400, Blue/200, Red/400, Red/200, Grey/400). Outline hover/active use Stroke/Neutral/Stronger → Strongest.
+- Added `Stroke/Neutral/Strongest` (`--color-stroke-neutral-strongest`, Neutral/500) to the token export.
+
+**Tabs synced to latest Figma**
+
+- New `large` size for pill tabs (Chip Large, 32px). Pill maps small → Chip Small, default → Chip Medium, large → Chip Large.
+- Standard tabs are Bold in both states (Text/Weak → Text/Strong when active). Active indicator is the Figma 2px `Stroke/Neutral/Strong` inside stroke; the group no longer draws its own baseline.
+- Code Connect added for Tab Group and Tab Item.
+
+**New: Fancy Icon** (`Components/Icon/Fancy Icon`)
+
+- Tinted container around `Icon`. `size` small / medium / large (24 / 32 / 40px; Figma "Meidum" maps to `medium`), `color` blue (Decorative/Blue) or neutral (Grey/200 + Grey/600).
+- Nested Icon sizes follow Figma: xsmall / small / medium.
+
+**New: Empty State**
+
+- Fancy Icon (Large, Neutral) + heading (Bold 16, Text/Weak) + description (Regular 14/20) + Primary Text Button with leading `plus` icon.
+- Booleans mirror Figma: `showIcon`, `showHeading`, `showDescription`, `showButton` (Figma "Shot button"). `icon` and `action` slots override the defaults.
+
+**Card**
+
+- Media placeholder fill set to Figma's `#FAFAFA`.
+
+**Input placeholder**
+
+- Placeholder color now uses `Input/Text/Placeholder` (`#B6B6B6`). It was falling back to Neutral/400 (`#6D6A6A`), which read as filled text.
+
+**Input placeholder**
+
+- Placeholder color now uses `Input/Text/Placeholder` (`#B6B6B6`). It was falling back to Neutral/400 (`#6D6A6A`), which read as filled text.
+
+---
+
+### September 17, 2026
+
+**Card synced to latest Figma**
+
+- New `type`: **Empty**, **Vertical** (default), **Horizontal**. Horizontal places the media slot on the left.
+- Card padding is Spacing/3 (12px). Media sits inset with Radius/Medium, not flush to the border.
+- Vertical body padding is Spacing/5 × Spacing/4. Empty and Horizontal keep Spacing/5 × Spacing/6.
+- `image={false}` still hides the top slot. Tag remains Chip Yellow Small.
+
+---
+
 ### August 18, 2026
 
 **Card synced to latest Figma**

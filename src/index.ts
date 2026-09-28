@@ -3,6 +3,11 @@ export type { DropAreaProps, DropAreaState } from './components/DropArea/DropAre
 
 export { Icon } from './components/Icon/Icon';
 export type { IconProps, IconSize, IconStyle } from './components/Icon/Icon';
+export { FancyIcon } from './components/Icon/FancyIcon';
+export type { FancyIconProps, FancyIconSize, FancyIconColor } from './components/Icon/FancyIcon';
+
+export { EmptyState } from './components/EmptyState/EmptyState';
+export type { EmptyStateProps } from './components/EmptyState/EmptyState';
 
 export { MenuItem } from './components/MenuItem/MenuItem';
 export type { MenuItemProps, MenuItemState } from './components/MenuItem/MenuItem';
@@ -15,7 +20,7 @@ export type { ChipColor, ChipProps, ChipSize } from './components/Chip/Chip';
 
 export { Button } from './components/Button/Button';
 export type {
-  ButtonAction,
+  ButtonAppearance,
   ButtonProps,
   ButtonSize,
   ButtonState,
@@ -49,7 +54,7 @@ export { Dialog } from './components/Dialog/Dialog';
 export type { DialogProps, DialogVariant } from './components/Dialog/Dialog';
 
 export { Card } from './components/Card/Card';
-export type { CardProps, CardSize } from './components/Card/Card';
+export type { CardProps, CardSize, CardType } from './components/Card/Card';
 
 export { Tabs } from './components/Tabs/Tabs';
 export type { TabsProps, TabItemProps, TabsSize, TabsOrientation, TabsStyle } from './components/Tabs/Tabs';

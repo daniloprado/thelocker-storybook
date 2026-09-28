@@ -347,6 +347,14 @@ export const tokenCollections: TokenCollection[] = [
         }
       },
       {
+        "name": "Stroke/Neutral/Strongest",
+        "type": "color",
+        "tier": "semantic",
+        "values": {
+          "light": "#241F20"
+        }
+      },
+      {
         "name": "Stroke/Neutral/Stronger",
         "type": "color",
         "tier": "semantic",
@@ -1314,6 +1322,13 @@ export const tokenNameToCssVar = [
   {
     "figmaName": "Stroke/Secondary/Weak",
     "cssVar": "--color-stroke-secondary-weak",
+    "type": "color",
+    "tier": "semantic",
+    "collection": "colors"
+  },
+  {
+    "figmaName": "Stroke/Neutral/Strongest",
+    "cssVar": "--color-stroke-neutral-strongest",
     "type": "color",
     "tier": "semantic",
     "collection": "colors"

@@ -183,7 +183,7 @@ function Dashboard() {
             <h1 className="dashboard__heading-title">Overview</h1>
             <p className="dashboard__heading-subtitle">Thursday, August 14, 2026</p>
           </div>
-          <Button variant="filled" size="medium" label="+ Add Client" />
+          <Button appearance="filled" size="medium" label="+ Add Client" />
         </div>
 
         <main className="dashboard__content">
@@ -216,7 +216,7 @@ function Dashboard() {
           <div className="dashboard__columns">
             <Widget
               title="Clients"
-              headerRight={<Button variant="outline" size="small" label="View All" />}
+              headerRight={<Button variant="neutral" appearance="outline" size="small" label="View All" />}
             >
               <Table
                 columns={clientColumns}
@@ -243,7 +243,7 @@ function Dashboard() {
           {/* Upcoming cards */}
           <Widget
             title="Upcoming Challenges"
-            headerRight={<Button variant="text" size="small" label="See All" />}
+            headerRight={<Button variant="neutral" appearance="text" size="small" label="See All" />}
           >
             <div className="dashboard__cards-row">
               <Card

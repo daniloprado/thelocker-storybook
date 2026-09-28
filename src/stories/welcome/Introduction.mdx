@@ -51,12 +51,14 @@ Variant counts are the product of the main axes that define each component set i
       {[
         ['Avatar', 'components-avatar', '45', 'Size × Shape × Type', true, 'Image, initials, or placeholder'],
         ['AvatarGroup', 'components-avatar-avatar-group', '—', 'Composition', false, 'Stacked avatars with overflow count'],
-        ['Button', 'components-buttons', '90', 'Variant × Size × State × Action', true, 'Filled, outline, text; regular / destructive'],
-        ['Card', 'components-card', '4', 'Size', true, 'Optional image / top slot; yellow Chip tag'],
+        ['Button', 'components-buttons', '135', 'Style × Type × Size × State', true, 'Primary / Secondary / Neutral / Destructive; filled, outline, text, ghost; leading / trailing icon'],
+        ['Card', 'components-card', '4', 'Size + Type', true, 'Empty / Vertical / Horizontal; yellow Chip tag'],
         ['Checkbox', 'components-checkbox', '4', 'State', true, 'Unchecked, checked, indeterminate, disabled'],
         ['Chip', 'components-chip', '30', 'Color × Size', true, 'Includes whiteStrong; leading / trailing slots'],
         ['Dialog', 'components-dialog', '2', 'Variant', false, 'scroll and simple; overlay + heading slots'],
         ['DropArea', 'components-droparea', '2', 'State', false, 'Default and active (drag-over)'],
+        ['EmptyState', 'components-empty-state', '1', 'Toggles', true, 'Fancy Icon + heading + description + Primary Text Button'],
+        ['FancyIcon', 'components-icon-fancy-icon', '6', 'Size × Color', true, 'Tinted container around Icon; blue / neutral'],
         ['FilterChip', 'components-filterchip', '3', 'State', true, 'Default, selected, disabled; optional close'],
         ['Icon', 'components-icon', '18', 'Style × Size', true, 'Font Awesome Pro: solid, regular, light'],
         ['Input', 'components-input', '9', 'Size × Status', true, 'Default, error, warning; prefix / suffix / clear'],
@@ -67,7 +69,7 @@ Variant counts are the product of the main axes that define each component set i
         ['Sidenav', 'components-sidenav', '4', 'Nav item state', false, 'Collapsible sidebar; nested items'],
         ['Switch', 'components-switch', '3', 'State', true, 'Off, on, disabled'],
         ['Table', 'components-table', '3', 'Size', false, 'Sorting, pagination, custom cell render'],
-        ['Tabs', 'components-tabs', '8', 'Style × Size × Orientation', false, 'Standard or pill (pill composes Chip)'],
+        ['Tabs', 'components-tabs', '10', 'Style × Size × State', true, 'Standard (default, small) or pill (small, default, large; composes Chip)'],
         ['Tooltip', 'components-tooltip', '4', 'Position', true, 'Top, bottom, left, right'],
         ['TopBar', 'components-top-bar', '—', 'Composition', false, 'App header: title, actions, branding'],
         ['Widget', 'components-widget', '—', 'Composition', true, 'Dashboard card: header + body + action slot']
@@ -118,7 +120,7 @@ function Example() {
     <div>
       <Avatar size="medium" type="initials" fallback="DP" />
       <Input label="Email" placeholder="you@example.com" />
-      <Button variant="primary" size="medium">Submit</Button>
+      <Button variant="primary" appearance="filled" size="medium" label="Submit" />
     </div>
   );
 }

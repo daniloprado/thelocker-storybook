@@ -3,13 +3,19 @@ import { Chip } from '../Chip/Chip';
 import './Card.css';
 
 export type CardSize = 'small' | 'medium' | 'large' | 'stretch';
+export type CardType = 'empty' | 'vertical' | 'horizontal';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   size?: CardSize;
+  /** Figma Type. Vertical and Horizontal show the top/media slot. */
+  type?: CardType;
   title?: string;
   description?: string;
   tag?: string;
-  /** Figma Image boolean. When false, the top slot is hidden. */
+  /**
+   * Figma Image boolean. When false, the top slot is hidden.
+   * Ignored when `type` is `empty`.
+   */
   image?: boolean;
   imageSrc?: string;
   /** Figma Top Slot. Overrides `imageSrc` when provided. */
@@ -19,6 +25,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 export function Card({
   size = 'medium',
+  type = 'vertical',
   title = 'Heading',
   description,
   tag,
@@ -29,11 +36,20 @@ export function Card({
   className,
   ...rest
 }: CardProps) {
-  const classes = ['card', `card--${size}`, className].filter(Boolean).join(' ');
+  const showMedia = type !== 'empty' && image;
+  const classes = [
+    'card',
+    `card--${size}`,
+    `card--${type}`,
+    showMedia ? 'card--media' : 'card--no-media',
+    className
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <div className={classes} {...rest}>
-      {image ? (
+      {showMedia ? (
         <div className="card__image">
           {topSlot ?? (imageSrc ? <img src={imageSrc} alt="" /> : null)}
         </div>
@@ -44,9 +60,7 @@ export function Card({
           children
         ) : (
           <>
-            {tag ? (
-              <Chip label={tag} size="small" color="yellow" />
-            ) : null}
+            {tag ? <Chip label={tag} size="small" color="yellow" /> : null}
             <h3 className="card__title">{title}</h3>
             {description ? <p className="card__description">{description}</p> : null}
           </>

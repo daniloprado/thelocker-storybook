@@ -14,6 +14,7 @@ const meta: Meta<typeof Card> = {
     description: lorem,
     tag: 'Label',
     size: 'medium',
+    type: 'vertical',
     image: true
   },
   parameters: {
@@ -29,14 +30,37 @@ type Story = StoryObj<typeof Card>;
 
 export const Playground: Story = {};
 
+export const Types: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
+      <Card type="vertical" size="small" title="Heading" description={lorem} tag="Label" />
+      <Card type="horizontal" size="small" title="Heading" description={lorem} tag="Label" />
+      <Card type="empty" size="small" title="Heading" description={lorem} tag="Label" />
+    </div>
+  )
+};
+
 export const Sizes: Story = {
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
       {(['small', 'medium', 'large'] as const).map((size) => (
-        <Card key={size} size={size} title="Heading" description={lorem} tag="Label" />
+        <Card key={size} size={size} type="vertical" title="Heading" description={lorem} tag="Label" />
       ))}
       <div style={{ width: '100%' }}>
-        <Card size="stretch" title="Heading" description={lorem} tag="Label" />
+        <Card size="stretch" type="vertical" title="Heading" description={lorem} tag="Label" />
+      </div>
+    </div>
+  )
+};
+
+export const Horizontal: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
+      {(['small', 'medium', 'large'] as const).map((size) => (
+        <Card key={size} size={size} type="horizontal" title="Heading" description={lorem} tag="Label" />
+      ))}
+      <div style={{ width: '100%' }}>
+        <Card size="stretch" type="horizontal" title="Heading" description={lorem} tag="Label" />
       </div>
     </div>
   )
@@ -46,6 +70,7 @@ export const WithImage: Story = {
   render: () => (
     <Card
       size="small"
+      type="vertical"
       title="Heading"
       description={lorem}
       tag="Label"
@@ -57,13 +82,14 @@ export const WithImage: Story = {
 export const NoImage: Story = {
   args: {
     size: 'small',
+    type: 'vertical',
     image: false
   }
 };
 
 export const EmptySlot: Story = {
   render: () => (
-    <Card size="small" image={false}>
+    <Card size="small" type="empty">
       {null}
     </Card>
   )

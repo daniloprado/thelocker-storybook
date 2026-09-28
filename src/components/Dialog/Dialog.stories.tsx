@@ -46,8 +46,8 @@ export const Playground: Story = {
     ),
     footer: (
       <>
-        <Button label="Secondary" variant="outline" size="large" />
-        <Button label="Primary" variant="filled" size="large" />
+        <Button label="Secondary" variant="neutral" appearance="outline" size="large" />
+        <Button label="Primary" appearance="filled" size="large" />
       </>
     ),
   },
@@ -61,8 +61,8 @@ export const Scroll: Story = {
       width={900}
       footer={
         <>
-          <Button label="Cancel" variant="outline" size="large" />
-          <Button label="Create" variant="filled" size="large" />
+          <Button label="Cancel" variant="neutral" appearance="outline" size="large" />
+          <Button label="Create" appearance="filled" size="large" />
         </>
       }
     >
@@ -97,8 +97,8 @@ export const Simple: Story = {
       variant="simple"
       footer={
         <>
-          <Button label="Cancel" variant="outline" size="large" />
-          <Button label="Assign" variant="filled" size="large" />
+          <Button label="Cancel" variant="neutral" appearance="outline" size="large" />
+          <Button label="Assign" appearance="filled" size="large" />
         </>
       }
     >
@@ -134,8 +134,8 @@ export const WithOverlay: Story = {
         showOverlay
         footer={
           <>
-            <Button label="Cancel" variant="outline" size="large" />
-            <Button label="Confirm" variant="filled" size="large" />
+            <Button label="Cancel" variant="neutral" appearance="outline" size="large" />
+            <Button label="Confirm" appearance="filled" size="large" />
           </>
         }
       >
@@ -162,13 +162,13 @@ export const HeadingSlots: Story = {
         }
         headingRight={
           <div style={{ display: 'flex', gap: 8 }}>
-            <Button label="Export" variant="outline" size="small" />
-            <Button label="Edit" variant="outline" size="small" />
+            <Button label="Export" variant="neutral" appearance="outline" size="small" />
+            <Button label="Edit" variant="neutral" appearance="outline" size="small" />
           </div>
         }
         footer={
           <>
-            <Button label="Close" variant="outline" size="large" />
+            <Button label="Close" variant="neutral" appearance="outline" size="large" />
           </>
         }
       >
@@ -186,8 +186,8 @@ export const HeadingSlots: Story = {
         }
         footer={
           <>
-            <Button label="Back" variant="outline" size="large" />
-            <Button label="Next" variant="filled" size="large" />
+            <Button label="Back" variant="neutral" appearance="outline" size="large" />
+            <Button label="Next" appearance="filled" size="large" />
           </>
         }
       >
@@ -201,11 +201,11 @@ export const HeadingSlots: Story = {
         variant="scroll"
         width={900}
         headingRight={
-          <Button label="Mark all read" variant="text" size="small" />
+          <Button label="Mark all read" variant="neutral" appearance="text" size="small" />
         }
         footer={
           <>
-            <Button label="Done" variant="outline" size="large" />
+            <Button label="Done" variant="neutral" appearance="outline" size="large" />
           </>
         }
       >
@@ -224,8 +224,8 @@ export const DestructiveAction: Story = {
       variant="simple"
       footer={
         <>
-          <Button label="Cancel" variant="outline" size="large" />
-          <Button label="Delete" variant="filled" size="large" action="destructive" />
+          <Button label="Cancel" variant="neutral" appearance="outline" size="large" />
+          <Button label="Delete" variant="destructive" appearance="filled" size="large" />
         </>
       }
     >

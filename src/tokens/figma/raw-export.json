@@ -58,6 +58,7 @@
         { "name": "Stroke/Primary/Weak", "type": "color", "tier": "semantic", "values": { "light": "#D9EAFD" } },
         { "name": "Stroke/Secondary/Strong", "type": "color", "tier": "semantic", "values": { "light": "#FFFFFF" } },
         { "name": "Stroke/Secondary/Weak", "type": "color", "tier": "semantic", "values": { "light": "#FFFFFF" } },
+        { "name": "Stroke/Neutral/Strongest", "type": "color", "tier": "semantic", "values": { "light": "#241F20" } },
         { "name": "Stroke/Neutral/Stronger", "type": "color", "tier": "semantic", "values": { "light": "#B6B6B6" } },
         { "name": "Stroke/Neutral/Strong", "type": "color", "tier": "semantic", "values": { "light": "#DBDBDB" } },
         { "name": "Stroke/Neutral/Weak", "type": "color", "tier": "semantic", "values": { "light": "#F3F3F3" } },

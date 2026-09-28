@@ -61,7 +61,8 @@
 }
 
 .input__field::placeholder {
-  color: var(--color-neutral-light-400, #6d6a6a);
+  color: var(--color-input-text-placeholder, #b6b6b6);
+  opacity: 1;
 }
 
 .input__prefix,
