@@ -2,6 +2,16 @@ import { Meta } from '@storybook/blocks';
 
 <Meta title="Changelog" />
 
+export const DocLink = ({ id, story, children }) => (
+  <a
+    href={story ? `./?path=/story/${id}--${story}` : `./?path=/docs/${id}--docs`}
+    target="_top"
+    style={{ color: '#1ea7fd', fontWeight: 'inherit', textDecoration: 'none' }}
+  >
+    {children}
+  </a>
+);
+
 # Changelog
 
 Summarised updates to The Locker 2.0 design system, newest first.
@@ -10,40 +20,36 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 ### September 28, 2026
 
-**Button synced to latest Figma (135 variants)**
+**<DocLink id="components-buttons">Button</DocLink> synced to latest Figma (135 variants)**
 
 - Props now mirror the Figma set: `variant` = **Style** (`primary`, `secondary`, `neutral`, `destructive`), `appearance` = **Type** (`filled`, `outline`, `text`, `ghost`), plus `size` and `state`.
-- New `leadingIcon` / `trailingIcon` booleans (Figma Leading / Trailing Icon) with `leadingIconCode` / `trailingIconCode` and `leading` / `trailing` slots. Icons use the Icon component (16px Large/Medium, 12px Small).
+- New `leadingIcon` / `trailingIcon` booleans (Figma Leading / Trailing Icon) with `leadingIconCode` / `trailingIconCode` and `leading` / `trailing` slots. Icons use the <DocLink id="components-icon">Icon</DocLink> component (16px Large/Medium, 12px Small).
 - Defaults match Figma: Secondary, Filled, Large. `action` prop removed; use `variant="destructive"`.
 - Filled types use Bold; Outline, Ghost and Text use Regular. Text type has no padding and hugs the label.
 - Focus is a 3px inside ring per style (Yellow/400, Blue/200, Red/400, Red/200, Grey/400). Outline hover/active use Stroke/Neutral/Stronger → Strongest.
 - Added `Stroke/Neutral/Strongest` (`--color-stroke-neutral-strongest`, Neutral/500) to the token export.
 
-**Tabs synced to latest Figma**
+**<DocLink id="components-tabs">Tabs</DocLink> synced to latest Figma**
 
-- New `large` size for pill tabs (Chip Large, 32px). Pill maps small → Chip Small, default → Chip Medium, large → Chip Large.
+- New `large` size for pill tabs (<DocLink id="components-chip">Chip</DocLink> Large, 32px). Pill maps small → <DocLink id="components-chip">Chip</DocLink> Small, default → <DocLink id="components-chip">Chip</DocLink> Medium, large → <DocLink id="components-chip">Chip</DocLink> Large.
 - Standard tabs are Bold in both states (Text/Weak → Text/Strong when active). Active indicator is the Figma 2px `Stroke/Neutral/Strong` inside stroke; the group no longer draws its own baseline.
-- Code Connect added for Tab Group and Tab Item.
+- Code Connect added for <DocLink id="components-tabs">Tab Group</DocLink> and <DocLink id="components-tabs">Tab Item</DocLink>.
 
-**New: Fancy Icon** (`Components/Icon/Fancy Icon`)
+**New: <DocLink id="components-icon-fancy-icon">Fancy Icon</DocLink>** (`Components/Icon/Fancy Icon`)
 
-- Tinted container around `Icon`. `size` small / medium / large (24 / 32 / 40px; Figma "Meidum" maps to `medium`), `color` blue (Decorative/Blue) or neutral (Grey/200 + Grey/600).
-- Nested Icon sizes follow Figma: xsmall / small / medium.
+- Tinted container around <DocLink id="components-icon">Icon</DocLink>. `size` small / medium / large (24 / 32 / 40px; Figma "Meidum" maps to `medium`), `color` blue (Decorative/Blue) or neutral (Grey/200 + Grey/600).
+- Nested <DocLink id="components-icon">Icon</DocLink> sizes follow Figma: xsmall / small / medium.
 
-**New: Empty State**
+**New: <DocLink id="components-empty-state">Empty State</DocLink>**
 
-- Fancy Icon (Large, Neutral) + heading (Bold 16, Text/Weak) + description (Regular 14/20) + Primary Text Button with leading `plus` icon.
+- <DocLink id="components-icon-fancy-icon">Fancy Icon</DocLink> (Large, Neutral) + heading (Bold 16, Text/Weak) + description (Regular 14/20) + Primary Text <DocLink id="components-buttons">Button</DocLink> with leading `plus` icon.
 - Booleans mirror Figma: `showIcon`, `showHeading`, `showDescription`, `showButton` (Figma "Shot button"). `icon` and `action` slots override the defaults.
 
-**Card**
+**<DocLink id="components-card">Card</DocLink>**
 
 - Media placeholder fill set to Figma's `#FAFAFA`.
 
-**Input placeholder**
-
-- Placeholder color now uses `Input/Text/Placeholder` (`#B6B6B6`). It was falling back to Neutral/400 (`#6D6A6A`), which read as filled text.
-
-**Input placeholder**
+**<DocLink id="components-input">Input</DocLink> placeholder**
 
 - Placeholder color now uses `Input/Text/Placeholder` (`#B6B6B6`). It was falling back to Neutral/400 (`#6D6A6A`), which read as filled text.
 
@@ -51,20 +57,20 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 ### September 17, 2026
 
-**Card synced to latest Figma**
+**<DocLink id="components-card">Card</DocLink> synced to latest Figma**
 
 - New `type`: **Empty**, **Vertical** (default), **Horizontal**. Horizontal places the media slot on the left.
-- Card padding is Spacing/3 (12px). Media sits inset with Radius/Medium, not flush to the border.
+- <DocLink id="components-card">Card</DocLink> padding is Spacing/3 (12px). Media sits inset with Radius/Medium, not flush to the border.
 - Vertical body padding is Spacing/5 × Spacing/4. Empty and Horizontal keep Spacing/5 × Spacing/6.
-- `image={false}` still hides the top slot. Tag remains Chip Yellow Small.
+- `image={false}` still hides the top slot. Tag remains <DocLink id="components-chip">Chip</DocLink> Yellow Small.
 
 ---
 
 ### August 18, 2026
 
-**Card synced to latest Figma**
+**<DocLink id="components-card">Card</DocLink> synced to latest Figma**
 
-- Tag uses Chip **Yellow** (was Blue). Title and description use Bold/Regular Body (16/24).
+- Tag uses <DocLink id="components-chip">Chip</DocLink> **Yellow** (was Blue). Title and description use Bold/Regular Body (16/24).
 - New `image` boolean (Figma **Image**) hides the top slot. `topSlot` maps to the Figma Top Slot; Body remains `children`.
 - Description clamps to two lines with ellipsis. Body padding is Spacing/5 × Spacing/6. Border uses Stroke/Neutral/Strong; fill uses Background/Default.
 
@@ -79,30 +85,30 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 ### August 14, 2026
 
-**Chip synced to latest Figma**
+**<DocLink id="components-chip">Chip</DocLink> synced to latest Figma**
 
 - New `whiteStrong` color: white fill with Neutral/500 (`#241F20`) border, distinct from `white` (Grey/500 border).
 - Leading and trailing slots (`leading` / `trailing`). Figma booleans map to `showLeadingIcon` / `showTrailingIcon` and now default **off**.
 - Code Connect maps **White Strong** → `whiteStrong` and the slot booleans.
 
-**Tabs pill style composes Chip**
+**<DocLink id="components-tabs">Tabs</DocLink> pill style composes <DocLink id="components-chip">Chip</DocLink>**
 
-- Pill tabs render `Chip`: active uses `whiteStrong`, inactive uses `neutral`.
-- Default size uses Chip Medium; Small uses Chip Small. Group gap is `--space-1` (4px).
-- Standard tabs follow Figma padding and type. `Tabs.Item` accepts optional `trailing` (e.g. calendar icon on default Standard).
+- Pill tabs render <DocLink id="components-chip">Chip</DocLink>: active uses `whiteStrong`, inactive uses `neutral`.
+- Default size uses <DocLink id="components-chip">Chip</DocLink> Medium; Small uses <DocLink id="components-chip">Chip</DocLink> Small. Group gap is `--space-1` (4px).
+- Standard tabs follow Figma padding and type. <DocLink id="components-tabs">Tabs.Item</DocLink> accepts optional `trailing` (e.g. calendar icon on default Standard).
 
 **Storybook docs**
 
-- New **Welcome/Introduction** page with overview, catalog, and getting started.
-- New **Foundations/Radius** page. Typography, Spacing, Elevation, and Motion pages expanded to show the full token scales.
+- New <DocLink id="welcome-introduction">Welcome/Introduction</DocLink> page with overview, catalog, and getting started.
+- New <DocLink id="foundations-radius">Foundations/Radius</DocLink> page. <DocLink id="foundations-typography">Typography</DocLink>, <DocLink id="foundations-spacing">Spacing</DocLink>, <DocLink id="foundations-elevation">Elevation</DocLink>, and <DocLink id="foundations-motion">Motion</DocLink> pages expanded to show the full token scales.
 
-**Experiment: Dashboard**
+**Experiment: <DocLink id="experiment-dashboard" story="default">Dashboard</DocLink>**
 
-- Added a composed Dashboard story using App Shell, Table, Tabs, Chip, and other library components.
+- Added a composed <DocLink id="experiment-dashboard" story="default">Dashboard</DocLink> story using <DocLink id="templates-app-shell" story="default">App Shell</DocLink>, <DocLink id="components-table">Table</DocLink>, <DocLink id="components-tabs">Tabs</DocLink>, <DocLink id="components-chip">Chip</DocLink>, and other library components.
 
 **Figma Code Connect**
 
-- Published Code Connect templates for library components, including Avatar.
+- Published Code Connect templates for library components, including <DocLink id="components-avatar">Avatar</DocLink>.
 
 ---
 
@@ -110,15 +116,15 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 **7 new components added from Figma**
 
-- **Card** — Content card with 4 size variants (small, medium, large, stretch), image slot, tag, title, and description.
-- **Tabs** — Compound component (`Tabs` + `Tabs.Item`) with horizontal/vertical orientations and default/small sizes.
-- **Checkbox** — Selection control with unselected, selected, indeterminate, and disabled states.
-- **RadioButton** — Selection control with unselected, selected, and disabled states.
-- **Switch** — Toggle control (42x24) with unselected, selected, and disabled states.
-- **List** — Compound component (`List` + `List.Item`) with simple text rows and avatar-based user rows.
-- **Tooltip** — CSS-only hover tooltip with top/bottom/left/right positions.
-- **Widget** — Dashboard card container with header, action slot, and content body.
-- **FilterChip** — Filter tag with default, selected (yellow), disabled states and optional close button.
+- **<DocLink id="components-card">Card</DocLink>** — Content card with 4 size variants (small, medium, large, stretch), image slot, tag, title, and description.
+- **<DocLink id="components-tabs">Tabs</DocLink>** — Compound component (<DocLink id="components-tabs">Tabs</DocLink> + <DocLink id="components-tabs">Tabs.Item</DocLink>) with horizontal/vertical orientations and default/small sizes.
+- **<DocLink id="components-checkbox">Checkbox</DocLink>** — Selection control with unselected, selected, indeterminate, and disabled states.
+- **<DocLink id="components-radiobutton">RadioButton</DocLink>** — Selection control with unselected, selected, and disabled states.
+- **<DocLink id="components-switch">Switch</DocLink>** — Toggle control (42x24) with unselected, selected, and disabled states.
+- **<DocLink id="components-list">List</DocLink>** — Compound component (<DocLink id="components-list">List</DocLink> + <DocLink id="components-list">List.Item</DocLink>) with simple text rows and avatar-based user rows.
+- **<DocLink id="components-tooltip">Tooltip</DocLink>** — CSS-only hover tooltip with top/bottom/left/right positions.
+- **<DocLink id="components-widget">Widget</DocLink>** — Dashboard card container with header, action slot, and content body.
+- **<DocLink id="components-filterchip">FilterChip</DocLink>** — Filter tag with default, selected (yellow), disabled states and optional close button.
 
 **14 missing design tokens added**
 
@@ -130,17 +136,17 @@ Summarised updates to The Locker 2.0 design system, newest first.
 
 ### July 23, 2026
 
-**New component: Dialog**
+**New component: <DocLink id="components-dialog">Dialog</DocLink>**
 
-- Created `Dialog` component with two variants: `scroll` (full-width, scrollable body) and `simple` (compact).
+- Created <DocLink id="components-dialog">Dialog</DocLink> component with two variants: `scroll` (full-width, scrollable body) and `simple` (compact).
 - Props: `title`, `variant`, `open`, `showOverlay`, `onClose`, `footer`, `headingLeft`, `headingRight`, `width`.
-- Reuses existing `Button` and `Icon` components for footer actions and close button.
+- Reuses existing <DocLink id="components-buttons">Button</DocLink> and <DocLink id="components-icon">Icon</DocLink> components for footer actions and close button.
 - Added stories: Playground, Scroll, Simple, With Overlay, Heading Slots, Destructive Action.
 - Exported from `index.ts` and registered in `sourceDocs`.
 
-**Input component synced to Figma**
+**<DocLink id="components-input">Input</DocLink> component synced to Figma**
 
 - Created `Input/Stroke/Warning` variable in Figma (aliased to `Yellow/500`).
 - Fixed scopes on all 11 `Input/*` variables (from `ALL_SCOPES` to proper `TEXT_FILL`, `FRAME_FILL`, `STROKE_COLOR`).
-- Set WEB code syntax (`var(--color-input-*)`) on all Input variables for Dev Mode.
-- Built Input ComponentSet in Figma with 27 variants (3 Sizes × 3 Statuses × 3 States), fully bound to design tokens.
+- Set WEB code syntax (`var(--color-input-*)`) on all <DocLink id="components-input">Input</DocLink> variables for Dev Mode.
+- Built <DocLink id="components-input">Input</DocLink> ComponentSet in Figma with 27 variants (3 Sizes × 3 Statuses × 3 States), fully bound to design tokens.
